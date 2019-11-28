@@ -191,22 +191,18 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-		var errorHappens = false;
+		
         // [START_EXCLUDE]
         if (errorCode == 'auth/weak-password') {
-		  errorHappens = true;
+		  
           alert('The password is too weak.');
         } else {
-		if (errorMessage != null){
-			errorHappens = true;
-		}
           alert(errorMessage);
+		  location.replace("signin.html");
         }
         console.log(error);
         // [END_EXCLUDE]
-		if (errorHappens == false){
-			location.replace("signin.html");
-		}
+		
       });
       // [END createwithemail]
 	  
