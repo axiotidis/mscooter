@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Sign in</title>
+  <meta name="generator" content="Google Web Designer 7.0.1.1101">
+  <style type="text/css" id="gwd-text-style">
+    p {
+      margin: 0px;
+    }
+    h1 {
+      margin: 0px;
+    }
+    h2 {
+      margin: 0px;
+    }
+    h3 {
+      margin: 0px;
+    }
+  </style>
+  <style type="text/css">
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+    }
+    body {
+      background-color: transparent;
+      transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+      transform-style: preserve-3d;
+    }
+    .gwd-p-rm78 {
+      position: absolute;
+      text-align: center;
+      left: 36.55%;
+      height: 7%;
+      top: 7%;
+      width: 26.9%;
+    }
+    .gwd-span-1ilc {
+      font-size: 36px;
+    }
+    .gwd-p-10k2 {
+      position: absolute;
+      text-align: center;
+      width: 18.07%;
+      height: 2.45%;
+      top: 56%;
+      left: 33%;
+    }
+    .gwd-p-1uxe {
+      position: absolute;
+      text-align: center;
+      width: 18.02%;
+      height: 2.45%;
+      top: 56%;
+      left: 51%;
+    }
+  </style>
+</head>
+
+<body class="htmlNoPages">
+  <p class="gwd-p-rm78"><span class="gwd-span-1ilc">Sign in</span><br>
+    
+  </p>
+  
+  <div id="firebaseui-auth-container">
+    <!-- This is where the Login ui will load -->
+  </div>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#config-web-app -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDU1RPg4avyJA4Dv4DCGtGb2nnne8FZCfk",
+    authDomain: "escooter-d43d9.firebaseapp.com",
+    databaseURL: "https://escooter-d43d9.firebaseio.com",
+    projectId: "escooter-d43d9",
+    storageBucket: "escooter-d43d9.appspot.com",
+    messagingSenderId: "27699640672",
+    appId: "1:27699640672:web:05eb2d79cca519e28d4605",
+    measurementId: "G-F2V4WNEBRW"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<!-- Firebase UI -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"
+    />    
+    <script src="./auth.js"></script>
+</body>
+
+</html>
