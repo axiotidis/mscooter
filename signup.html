@@ -172,7 +172,7 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
      function handleSignUp() {
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
-	  var cpassword = document.getElementById('cpassword').value;
+      var cpassword = document.getElementById('cpassword').value;
       if (email.length < 4) {
         alert('Please enter an email address.');
         return;
@@ -198,7 +198,7 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
           alert('The password is too weak.');
         } else {
           alert(errorMessage);
-		  if (errorMessage == ""){
+		  if (errorMessage == ''){
 		     location.replace("signin.html");
 		  }
 		  
