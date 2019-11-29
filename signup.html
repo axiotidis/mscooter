@@ -188,6 +188,7 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
       // Sign in with email and pass.
       // [START createwithemail]
       firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user){
+	      alert('You are a registered user now!');
 	      location.replace("signin.html");})
 	      .catch(function(error) {
 	      
