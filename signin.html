@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Sign in</title>
+  <meta name="generator" content="Google Web Designer 7.0.1.1101">
+  <style type="text/css" id="gwd-text-style">
+    p {
+      margin: 0px;
+    }
+    h1 {
+      margin: 0px;
+    }
+    h2 {
+      margin: 0px;
+    }
+    h3 {
+      margin: 0px;
+    }
+  </style>
+  <style type="text/css">
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+    }
+    body {
+      background-color: transparent;
+      transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+      transform-style: preserve-3d;
+    }
+    .gwd-p-1h1t {
+      position: absolute;
+      left: 0%;
+      height: 5.35%;
+      width: 100%;
+      font-weight: bold;
+      font-size: 36px;
+      text-align: center;
+      top: 5%;
+    }
+    .gwd-div-1gsn {
+      position: absolute;
+      height: 50%;
+      border-image-source: none;
+      border-image-width: 1;
+      border-image-outset: 0;
+      border-image-repeat: stretch;
+      border-color: rgb(40, 40, 197);
+      border-style: solid;
+      border-width: 2px;
+      left: 10%;
+      width: 80%;
+      top: 25%;
+    }
+    .gwd-p-179c {
+      position: absolute;
+      left: 0%;
+      width: 50%;
+      top: 15%;
+      height: 5%;
+      text-align: right;
+    }
+    .gwd-p-198j {
+      position: absolute;
+      left: 50%;
+      top: 14.86%;
+      height: 5%;
+      width: 50%;
+    }
+  </style>
+</head>
+
+<body class="htmlNoPages">
+  <p class="gwd-p-1h1t">Sign In</p>
+  <div class="gwd-div-1gsn" id="firebaseui-auth-container">
+    <!-- This is where the Login ui will load -->
+  </div>
+  <p class="gwd-p-179c">Don't have an account?</p>
+  <p class="gwd-p-198j">&nbsp;<a href="http://signup.html">Create one</a></p>
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#config-web-app -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDU1RPg4avyJA4Dv4DCGtGb2nnne8FZCfk",
+    authDomain: "escooter-d43d9.firebaseapp.com",
+    databaseURL: "https://escooter-d43d9.firebaseio.com",
+    projectId: "escooter-d43d9",
+    storageBucket: "escooter-d43d9.appspot.com",
+    messagingSenderId: "27699640672",
+    appId: "1:27699640672:web:05eb2d79cca519e28d4605",
+    measurementId: "G-F2V4WNEBRW"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<!-- Firebase UI -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"
+    />    
+    <script src="auth.js"></script>
+</body>
+
+</html>
