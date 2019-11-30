@@ -1,13 +1,11 @@
 
-var basemap = new L.TileLayer(baseUrl, {maxZoom: 17, attribution: baseAttribution, subdomains: subdomains, opacity: opacity});
+var basemap = new L.TileLayer(baseUrl, {maxZoom: 30, attribution: baseAttribution, subdomains: subdomains, opacity: opacity});
 
 var lat = 37.974447332990316;		//set initial value latitude
 var lng = 23.72267961502075;		//set initial value lognitude
-var zoom = 15;		//set zoom level
-var myPosition = 0;	//set an initial value of user's location
-var range = 10;		//set default range to 10km
-var indx = 0;		//set the array index
-var poi = [];		//this array holds the marker's details
+var zoom = 20;		//set zoom level
+
+var sPos = [];		//this array holds the position of e-scooters
 
 /*var greenIcon = L.icon({			//set a personal marker icon
 	iconUrl: 'img/leaf-green.png',
