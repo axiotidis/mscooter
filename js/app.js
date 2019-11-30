@@ -3,7 +3,7 @@ var basemap = new L.TileLayer(baseUrl, {maxZoom: 17, attribution: baseAttributio
 
 var lat = 37.974447332990316;		//set initial value latitude
 var lng = 23.72267961502075;		//set initial value lognitude
-var zoom = 15;		//set zoom level
+var zoom = 17;		//set zoom level
 
 var sPos = [];		//this array holds the position of e-scooters
 
