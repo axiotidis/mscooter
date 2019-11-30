@@ -27,6 +27,7 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
 
 <script type="text/javascript">
   firebase.auth().signOut().then(function()  {
+    alert('You have logged out successfully');
     location.replace("signin.html");
 }).catch(function(error) {
   alert(error);
