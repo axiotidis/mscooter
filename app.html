@@ -29,8 +29,8 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     user = firebase.auth().currentUser;
-    name = user.displayName;
-    message = 'Welcome' + neme;
+    var name = user.displayName;
+    var message = 'Welcome ' + name;
     alert(message);
   } else {
     location.replace("signin.html");
