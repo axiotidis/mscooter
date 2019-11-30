@@ -24,7 +24,7 @@ var redIcon = L.icon({			//set a personal marker icon
 	iconUrl: 'pics/red_pin.png',
 	//shadowUrl: 'img/leaf-shadow.png',
 
-	iconSize:     [38, 95], // size of the icon
+	iconSize:     [38, 46], // size of the icon
 	//shadowSize:   [50, 64], // size of the shadow
 	iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
 	//shadowAnchor: [4, 62],  // the same for the shadow
