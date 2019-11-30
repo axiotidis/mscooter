@@ -28,12 +28,15 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
 <script type="text/javascript">
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    alert('Welcome!');
+    user = firebase.auth().currentUser;
+    name = user.displayName;
+    message = 'Welcome' + neme;
+    alert(message);
   } else {
     location.replace("signin.html");
   }
 });
 </script>
-  <h1>You are in the app section in</h1>
+  
 </body>
 </html>
