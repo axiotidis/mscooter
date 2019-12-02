@@ -31,6 +31,41 @@ var redIcon = L.icon({			//set a personal marker icon
 	popupAnchor:  [-6, -86] // point from which the popup should open relative to the iconAnchor
 });
 
+var redScooter = L.icon({			//set a personal marker icon
+	iconUrl: 'pics/red_scooter.png',
+	//shadowUrl: 'img/leaf-shadow.png',
+
+	iconSize:     [38, 46], // size of the icon
+	//shadowSize:   [50, 64], // size of the shadow
+	iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+	//shadowAnchor: [4, 62],  // the same for the shadow
+	//popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+	popupAnchor:  [-6, -86] // point from which the popup should open relative to the iconAnchor
+});
+
+var greenScooter = L.icon({			//set a personal marker icon
+	iconUrl: 'pics/green_scooter.png',
+	//shadowUrl: 'img/leaf-shadow.png',
+
+	iconSize:     [38, 46], // size of the icon
+	//shadowSize:   [50, 64], // size of the shadow
+	iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+	//shadowAnchor: [4, 62],  // the same for the shadow
+	//popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+	popupAnchor:  [-6, -86] // point from which the popup should open relative to the iconAnchor
+});
+
+var poiIcon = L.icon({			//set a personal marker icon
+	iconUrl: 'pics/poi.png',
+	//shadowUrl: 'img/leaf-shadow.png',
+
+	iconSize:     [38, 46], // size of the icon
+	//shadowSize:   [50, 64], // size of the shadow
+	iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+	//shadowAnchor: [4, 62],  // the same for the shadow
+	//popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+	popupAnchor:  [-6, -86] // point from which the popup should open relative to the iconAnchor
+});
 //center and zoom map in a position found by geolocation
 var center = new L.LatLng(lat, lng);
 //var map = new L.map('map', {center: center, zoomControl: false, maxZoom: maxZoom, layers: [basemap] });
