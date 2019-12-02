@@ -1,9 +1,10 @@
 
 var basemap = new L.TileLayer(baseUrl, {maxZoom: 19, attribution: baseAttribution, subdomains: subdomains, opacity: opacity});
 
-var lat = 37.974447332990316;		//set initial value latitude
-var lng = 23.72267961502075;		//set initial value lognitude
+var lat = 0;		//set initial value latitude
+var lng = 0;		//set initial value lognitude
 var zoom = 17;		//set zoom level
+var myPosition = 0;	//set an initial value of user's location
 
 var sPos = [];		//this array holds the position of e-scooters
 
@@ -41,8 +42,8 @@ if (navigator.geolocation) {
 
 
 function setPosition(position) {
-  //lat = position.coords.latitude.toString();		//find latitude
-  //lng = position.coords.longitude.toString();		//find lognitude
+  lat = position.coords.latitude.toString();		//find latitude
+  lng = position.coords.longitude.toString();		//find lognitude
   var marker = new L.marker([lat, lng], {icon: redIcon}).addTo(map);	//set a marker in current geoposition
   
   map.setView([lat, lng], zoom);
