@@ -8,18 +8,7 @@ var myPosition = 0;	//set an initial value of user's location
 
 var sPos = [];		//this array holds the position of e-scooters
 
-/*var greenIcon = L.icon({			//set a personal marker icon
-	iconUrl: 'img/leaf-green.png',
-	shadowUrl: 'img/leaf-shadow.png',
-
-	iconSize:     [38, 95], // size of the icon
-	shadowSize:   [50, 64], // size of the shadow
-	iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-	shadowAnchor: [4, 62],  // the same for the shadow
-	popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-});*/
-
-var redIcon = L.icon({			//set a personal marker icon
+var redIcon = L.icon({			//set a marker icon for current location of user
 	iconUrl: 'pics/red_pin.png',
 	//shadowUrl: 'img/leaf-shadow.png',
 
@@ -31,7 +20,7 @@ var redIcon = L.icon({			//set a personal marker icon
 	popupAnchor:  [-6, -86] // point from which the popup should open relative to the iconAnchor
 });
 
-var redScooter = L.icon({			//set a personal marker icon
+var redScooter = L.icon({			//set a marker icon for booked scooters
 	iconUrl: 'pics/red_scooter.png',
 	//shadowUrl: 'img/leaf-shadow.png',
 
@@ -43,7 +32,7 @@ var redScooter = L.icon({			//set a personal marker icon
 	popupAnchor:  [-6, -86] // point from which the popup should open relative to the iconAnchor
 });
 
-var greenScooter = L.icon({			//set a personal marker icon
+var greenScooter = L.icon({			//set a marker icon for free scooters
 	iconUrl: 'pics/green_scooter.png',
 	//shadowUrl: 'img/leaf-shadow.png',
 
@@ -55,7 +44,7 @@ var greenScooter = L.icon({			//set a personal marker icon
 	popupAnchor:  [-6, -86] // point from which the popup should open relative to the iconAnchor
 });
 
-var poiIcon = L.icon({			//set a personal marker icon
+var poiIcon = L.icon({			//set a marker icon for pois
 	iconUrl: 'pics/poi.png',
 	//shadowUrl: 'img/leaf-shadow.png',
 
