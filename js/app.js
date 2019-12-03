@@ -181,13 +181,9 @@ function gotSdata(data){
 	mypopup += "</b><br><b>";
 	mypopup += "0.15 EURO/min";
 	mypopup += "</b><br>";
-	mypopup += "If it is ok press ";
+	mypopup += "If it is ok press the ";
 	mypopup += "<b>";
-	mypopup += "BOOK";
-	mypopup += "</b><br>";
-	mypopup += "Else press ";
-	mypopup += "<b>";
-	mypopup += "CANCEL";
+	mypopup += "BOOK button";
 	mypopup += "</b><br>";
 	marker.bindPopup(mypopup);
 
