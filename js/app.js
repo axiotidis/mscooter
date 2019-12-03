@@ -115,10 +115,10 @@ function setPosition(position) {
   marker.bindPopup(mypopup).openPopup();
 }
   //var userId = firebase.auth().currentUser.uid;
-  var poiLat = firebase.database().ref('/poi/0/').once('value').snapshot.val().Lat;
-  var poiLng = firebase.database().ref('/poi/0/').once('value').snapshot.val().Log;
-  var poiPic = firebase.database().ref('/poi/0/').once('value').snapshot.val().Pic;
-  var poiTxt = firebase.database().ref('/poi/0/').once('value').snapshot.val().name;
+  var poiLat = firebase.database().ref('/poi/0/').once('value').Lat;
+  var poiLng = firebase.database().ref('/poi/0/').once('value').Log;
+  var poiPic = firebase.database().ref('/poi/0/').once('value').Pic;
+  var poiTxt = firebase.database().ref('/poi/0/').once('value').name;
 
 
   var marker = new L.marker([poiLat, poiLng], {icon: poiIcon}).addTo(map);	//set a marker in current geoposition
