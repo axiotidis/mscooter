@@ -7,6 +7,7 @@ var zoom = 15;		//set zoom level
 var myPosition = 0;	//set an initial value of user's location
 
 var sPos = [];		//this array holds the position of e-scooters
+var pois = [];		//this array holds the position of point of interest
 
 var redIcon = L.icon({			//set a marker icon for current location of user
 	iconUrl: 'pics/red_pin.png',
@@ -75,6 +76,36 @@ function setPosition(position) {
   marker.bindPopup(mypopup).openPopup();
 }
 
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDU1RPg4avyJA4Dv4DCGtGb2nnne8FZCfk",
+    authDomain: "escooter-d43d9.firebaseapp.com",
+    databaseURL: "https://escooter-d43d9.firebaseio.com",
+    projectId: "escooter-d43d9",
+    storageBucket: "escooter-d43d9.appspot.com",
+    messagingSenderId: "27699640672",
+    appId: "1:27699640672:web:05eb2d79cca519e28d4605",
+    measurementId: "G-F2V4WNEBRW"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Get a reference to the database service
+  var database = firebase.database();
+
+  return firebase.database().ref('/poi01/').orderByChild('uid').equalTo(userUID).once('value').then(function(snapshot) {
+  var poiLng = snapshot.val().Log;
+  var poiLat = snapshot.val().Lat;
+  var poiTxt = snapshot.val().name;
+  var poiPic = snapshot.val().Pic;
+  var marker = new L.marker([poiLat, poiLng], {icon: poiIcon}).addTo(map);	//set a marker in current geoposition
+  var mypopup = "<img src= poiPic />";		//prepare a custom popup 
+	mypopup += "<br><br><b>";
+	mypopup += poiTxt;
+	mypopup += "</b>";
+	marker.bindPopup(mypopup).openPopup();
+});
+
 
 
 
@@ -86,6 +117,8 @@ function onLocationFound(e) {
     function onLocationError(e) {
         alert(e.message);
     }
+
+
 
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
