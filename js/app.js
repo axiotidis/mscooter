@@ -115,7 +115,7 @@ function setPosition(position) {
   marker.bindPopup(mypopup).openPopup();
 }
   //var userId = firebase.auth().currentUser.uid;
-  var poiLat = firebase.database().ref('/poi/0/').once('value').Lat;
+  var poiLat = firebase.database().ref('/poi/0/Lat/').once('value');
   var poiLng = firebase.database().ref('/poi/0/').once('value').Log;
   var poiPic = firebase.database().ref('/poi/0/').once('value').Pic;
   var poiTxt = firebase.database().ref('/poi/0/').once('value').name;
