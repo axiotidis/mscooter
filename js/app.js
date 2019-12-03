@@ -114,8 +114,8 @@ function setPosition(position) {
   map.setView([lat, lng], zoom);
   marker.bindPopup(mypopup).openPopup();
 }
-  //var userId = firebase.auth().currentUser.uid;
-  var poiLat = firebase.database().ref('/poi/0/Lat/').once('value');
+  var userId = firebase.auth().currentUser.uid;
+  var poiLat = firebase.database().ref('/poi/0/Lat/' + userId).once('value');
   var poiLng = firebase.database().ref('/poi/0/').once('value').Log;
   var poiPic = firebase.database().ref('/poi/0/').once('value').Pic;
   var poiTxt = firebase.database().ref('/poi/0/').once('value').name;
