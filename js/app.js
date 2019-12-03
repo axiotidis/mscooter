@@ -114,11 +114,24 @@ function setPosition(position) {
   map.setView([lat, lng], zoom);
   marker.bindPopup(mypopup).openPopup();
 }
+  var userId = firebase.auth().currentUser.uid;
+  return firebase.database().ref('/poi/').orderByChild('Lat').equalTo(userId).once('value').then(function(snapshot) {
+  var poiLat = snapshot.val().Lat;
+  // ...
+});
+return firebase.database().ref('/poi/').orderByChild('Log').equalTo(userId).once('value').then(function(snapshot) {
+  var poiLng = snapshot.val().Log;
+  // ...
+});
+  return firebase.database().ref('/poi/').orderByChild('Pic').equalTo(userId).once('value').then(function(snapshot) {
+  var poiPic = snapshot.val().Pic;
+  // ...
+});
+  return firebase.database().ref('/poi/').orderByChild('name').equalTo(userId).once('value').then(function(snapshot) {
+  var poiTxt = snapshot.val().name;
+  // ...
+});
 
-  
-
-  
-  
   var marker = new L.marker([poiLat, poiLng], {icon: poiIcon}).addTo(map);	//set a marker in current geoposition
   var mypopup = "<img src= poiPic />";		//prepare a custom popup 
 	mypopup += "<br><br><b>";
