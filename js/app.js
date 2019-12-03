@@ -1,8 +1,8 @@
 
 var basemap = new L.TileLayer(baseUrl, {maxZoom: 19, attribution: baseAttribution, subdomains: subdomains, opacity: opacity});
 
-var klat = 41.11598494054161;		//set initial value latitude
-var klng = 25.403566360473633;		//set initial value lognitude
+var klat = 41.11954131584224;		//set initial value latitude
+var klng = 25.399789810180664;		//set initial value lognitude
 var poiLat = 0;		//set initial value latitude for poi
 var poiLng = 0;		//set initial value lognitude for poi
 var poiTxt = "";
