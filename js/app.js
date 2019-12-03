@@ -81,7 +81,7 @@ function setPosition(position) {
   // Get a reference to the database service
   var database = firebase.database();
   var userId = firebase.auth().currentUser.uid;
-  alert(userId);
+  alert("userId= " + userId);
   firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
   var poiLng = snapshot.val().Log;
   
