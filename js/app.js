@@ -78,25 +78,16 @@ function setPosition(position) {
 
   
 
-  // Get a reference to the database service
-  var database = firebase.database();
-  var userId = firebase.auth().currentUser.uid;
-  alert("userId= " + userId);
-  return firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
-  var poiLng = snapshot.val().Log;
-  
-});
- firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
-  var poiLat = snapshot.val().Lat;
-  
-});
- firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
-  var poiTxt = snapshot.val().name;
-  
-});
-  firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
-  var poiPic = snapshot.val().Pic;
-  
+  const dbRef = firebase.database().ref();
+  const poiRef = dbRef.child('poi');
+
+poiRef.on("child_added", snap => {
+    let point = snap.val();
+    let latitude = document.createElement("latitude");
+    let lognitude = document.createElement("lognitude");
+    latitude = poi.Lat;
+    lognitude = poi.Log;
+    alert(lognitude);
 });
   
   var marker = new L.marker([poiLat, poiLng], {icon: poiIcon}).addTo(map);	//set a marker in current geoposition
