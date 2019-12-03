@@ -7,11 +7,16 @@ var poiLat = 0;		//set initial value latitude for poi
 var poiLng = 0;		//set initial value lognitude for poi
 var poiTxt = "";
 var poiPic = "";
+
+var sLat = 0;
+var sLng = 0;
+var sBat = 0;
+var sBooked = "";
+var sId = 0;
+
 var zoom = 15;		//set zoom level
 var myPosition = 0;	//set an initial value of user's location
 
-var sPos = [];		//this array holds the position of e-scooters
-var pois = [];		//this array holds the position of point of interest
 
   // Your web app's Firebase configuration
   var firebaseConfig = {
@@ -125,6 +130,11 @@ for (i = 0; i < 11; i++) {
 	ref.on("value" , gotData , errData);
 } 
 
+var j;
+for (j = 0; j < 11; j++) {
+  	let ref = database.ref("scooters/" +j); 
+	ref.on("value" , gotSdata , errSdata);
+} 
 
 function gotData(data){
 	data = data.val();
@@ -139,18 +149,53 @@ function gotData(data){
 	mypopup += poiTxt;
 	mypopup += "</b>";
 	marker.bindPopup(mypopup).openPopup();
-	
-	//alert(data.Pic);
-	//let keys = Object.keys(data);
-	//console.log(keys[0]);
-	//console.log(data[0]);
+
 }
 
 function errData(error){
 	console.log(error.message , error.code);
 }
 
-  
+function gotSdata(data){
+	data = data.val();
+	sLat = data.Lat;
+	sLng = data.Log;
+	sBat = data.Bat;
+	sBooked = data.Booked;
+	sId = data.ID;
+	
+	if (sBooked == "No"){
+		var marker = new L.marker([sLat, sLng], {icon: greenScooter}).addTo(map);	//set a marker in current geoposition
+	} else {
+		var marker = new L.marker([sLat, sLng], {icon: redScooter}).addTo(map);	//set a marker in current geoposition
+	}
+	
+  	var mypopup = "<b>";		//prepare a custom popup 
+	mypopup += "SN: kom" + sId;
+	mypopup += "</b><br><br><b>";
+	mypopup += "Battery: " + sBat +"%";
+	mypopup += "</b><br><b>";
+	mypopup += "1 EURO to unlock";
+	mypopup += "</b><br><b>";
+	mypopup += "+";
+	mypopup += "</b><br><b>";
+	mypopup += "0.15 EURO/min";
+	mypopup += "</b><br>";
+	mypopup += "If it is ok press ";
+	mypopup += "<b>";
+	mypopup += "BOOK";
+	mypopup += "</b><br>";
+	mypopup += "Else press ";
+	mypopup += "<b>";
+	mypopup += "CANCEL";
+	mypopup += "</b><br>";
+	marker.bindPopup(mypopup).openPopup();
+
+}
+
+function errSdata(error){
+	console.log(error.message , error.code);
+}  
 
   
 
