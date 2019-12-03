@@ -3,6 +3,10 @@ var basemap = new L.TileLayer(baseUrl, {maxZoom: 19, attribution: baseAttributio
 
 var lat = 0;		//set initial value latitude
 var lng = 0;		//set initial value lognitude
+var poiLat = 0;		//set initial value latitude for poi
+var poiLng = 0;		//set initial value lognitude for poi
+var poiTxt = "";
+var poiPic = "";
 var zoom = 15;		//set zoom level
 var myPosition = 0;	//set an initial value of user's location
 
@@ -120,7 +124,11 @@ ref.on("value" , gotData , errData);
 
 function gotData(data){
 	data = data.val();
-	alert(data.name);
+	poiLat = data.Lat;
+	poiLng = data.Log;
+	poiPic = data.Pic;
+	poiTxt = data.name;
+	//alert(data.name);
 	//let keys = Object.keys(data);
 	//console.log(keys[0]);
 	//console.log(data[0]);
@@ -130,19 +138,14 @@ function errData(error){
 	console.log(error.message , error.code);
 }
 
-  /*var userId = firebase.auth().currentUser.uid;
-  var poiLat = firebase.database().ref('/poi/0/Lat/' + userId).once('value');
-  var poiLng = firebase.database().ref('/poi/0/').once('value').Log;
-  var poiPic = firebase.database().ref('/poi/0/').once('value').Pic;
-  var poiTxt = firebase.database().ref('/poi/0/').once('value').name;
-alert(poiLat);
+  
 
   var marker = new L.marker([poiLat, poiLng], {icon: poiIcon}).addTo(map);	//set a marker in current geoposition
   var mypopup = "<img src= poiPic />";		//prepare a custom popup 
 	mypopup += "<br><br><b>";
 	mypopup += poiTxt;
 	mypopup += "</b>";
-	marker.bindPopup(mypopup).openPopup();*/
+	marker.bindPopup(mypopup).openPopup();
 
 
 function onLocationFound(e) {
