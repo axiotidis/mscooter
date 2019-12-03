@@ -92,7 +92,7 @@ var poiIcon = L.icon({			//set a marker icon for pois
 	iconUrl: 'pics/poi.png',
 	//shadowUrl: 'img/leaf-shadow.png',
 
-	iconSize:     [50, 64], // size of the icon
+	iconSize:     [38, 46], // size of the icon
 	//shadowSize:   [50, 64], // size of the shadow
 	iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
 	//shadowAnchor: [4, 62],  // the same for the shadow
@@ -121,7 +121,7 @@ function setPosition(position) {
 
 var i;
 for (i = 0; i < 11; i++) {
-  	let ref = database.ref("poi/0"); 
+  	let ref = database.ref("poi/" +i); 
 	ref.on("value" , gotData , errData);
 } 
 
