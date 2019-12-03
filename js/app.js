@@ -40,11 +40,11 @@ var myPosition = 0;	//set an initial value of user's location
     var email = user.email;
     var name = user.name;
     if (email != null){
-      var message = 'Welcome user ' + email;
-      alert(message);
+      //var message = 'Welcome user ' + email;
+      //alert(message);
     }else if(name != null){
-      var message = 'Welcome user ' + name;
-      alert(message);
+      //var message = 'Welcome user ' + name;
+      //alert(message);
     }
     
   } else {
@@ -73,7 +73,7 @@ var redScooter = L.icon({			//set a marker icon for booked scooters
 	iconUrl: 'pics/red_scooter.png',
 	//shadowUrl: 'img/leaf-shadow.png',
 
-	iconSize:     [38, 46], // size of the icon
+	iconSize:     [19, 23], // size of the icon
 	//shadowSize:   [50, 64], // size of the shadow
 	iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
 	//shadowAnchor: [4, 62],  // the same for the shadow
@@ -85,7 +85,7 @@ var greenScooter = L.icon({			//set a marker icon for free scooters
 	iconUrl: 'pics/green_scooter.png',
 	//shadowUrl: 'img/leaf-shadow.png',
 
-	iconSize:     [38, 46], // size of the icon
+	iconSize:     [19, 23], // size of the icon
 	//shadowSize:   [50, 64], // size of the shadow
 	iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
 	//shadowAnchor: [4, 62],  // the same for the shadow
