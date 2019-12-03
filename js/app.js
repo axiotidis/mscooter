@@ -73,7 +73,7 @@ var redScooter = L.icon({			//set a marker icon for booked scooters
 	iconUrl: 'pics/red_scooter.png',
 	//shadowUrl: 'img/leaf-shadow.png',
 
-	iconSize:     [29, 35], // size of the icon
+	iconSize:     [34, 41], // size of the icon
 	//shadowSize:   [50, 64], // size of the shadow
 	iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
 	//shadowAnchor: [4, 62],  // the same for the shadow
@@ -85,7 +85,7 @@ var greenScooter = L.icon({			//set a marker icon for free scooters
 	iconUrl: 'pics/green_scooter.png',
 	//shadowUrl: 'img/leaf-shadow.png',
 
-	iconSize:     [29, 35], // size of the icon
+	iconSize:     [34, 41], // size of the icon
 	//shadowSize:   [50, 64], // size of the shadow
 	iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
 	//shadowAnchor: [4, 62],  // the same for the shadow
