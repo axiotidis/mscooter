@@ -82,7 +82,7 @@ function setPosition(position) {
   var database = firebase.database();
   var userId = firebase.auth().currentUser.uid;
   alert("userId= " + userId);
-  firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
+  return firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
   var poiLng = snapshot.val().Log;
   
 });
