@@ -92,20 +92,21 @@ function setPosition(position) {
 
   // Get a reference to the database service
   var database = firebase.database();
+  var userId = firebase.auth().currentUser.uid;
 
-  return firebase.database().ref('/poi01/').once('value').then(function(snapshot) {
+  return firebase.database().ref('/poi01/').orderByChild('Log').equalTo(userUID).once('value').then(function(snapshot) {
   var poiLng = snapshot.val().Log;
   
 });
-return firebase.database().ref('/poi01/').once('value').then(function(snapshot) {
+return firebase.database().ref('/poi01/').orderByChild('Lat').equalTo(userUID).once('value').then(function(snapshot) {
   var poiLat = snapshot.val().Lat;
   
 });
-return firebase.database().ref('/poi01/').once('value').then(function(snapshot) {
+return firebase.database().ref('/poi01/').orderByChild('name').equalTo(userUID).once('value').then(function(snapshot) {
   var poiTxt = snapshot.val().name;
   
 });
-  return firebase.database().ref('/poi01/').once('value').then(function(snapshot) {
+  return firebase.database().ref('/poi01/').orderByChild('Pic').equalTo(userUID).once('value').then(function(snapshot) {
   var poiPic = snapshot.val().Pic;
   
 });
