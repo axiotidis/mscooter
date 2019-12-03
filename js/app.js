@@ -155,7 +155,7 @@ function gotData(data){
 function errData(error){
 	console.log(error.message , error.code);
 }
-
+var available = "";
 function gotSdata(data){
 	data = data.val();
 	sLat = data.Lat;
@@ -164,16 +164,20 @@ function gotSdata(data){
 	sBooked = data.Booked;
 	sId = data.ID;
 	
+	
 	if (sBooked == "No"){
 		var marker = new L.marker([sLat, sLng], {icon: greenScooter}).addTo(map);	//set a marker in current geoposition
+		available = "Yes";
 	} else {
 		var marker = new L.marker([sLat, sLng], {icon: redScooter}).addTo(map);	//set a marker in current geoposition
+		available = "No";
 	}
 	
   	var mypopup = "<b>";		//prepare a custom popup 
 	mypopup += "SN: kom" + sId;
 	mypopup += "</b><br><br><b>";
-	mypopup += "Available: " + sBooked;
+	mypopup += "Available: " + available;
+	mypopup += "</b><br><b>";
 	mypopup += "Battery: " + sBat +"%";
 	mypopup += "</b><br><b>";
 	mypopup += "1 EURO to unlock";
