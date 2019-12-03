@@ -148,7 +148,7 @@ function gotData(data){
 	mypopup += "<br><br><b>";
 	mypopup += poiTxt;
 	mypopup += "</b>";
-	marker.bindPopup(mypopup).openPopup();
+	marker.bindPopup(mypopup);
 
 }
 
@@ -189,7 +189,7 @@ function gotSdata(data){
 	mypopup += "<b>";
 	mypopup += "CANCEL";
 	mypopup += "</b><br>";
-	marker.bindPopup(mypopup).openPopup();
+	marker.bindPopup(mypopup);
 
 }
 
