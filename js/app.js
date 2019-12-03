@@ -41,6 +41,10 @@ var pois = [];		//this array holds the position of point of interest
   }
 });
 
+// Get a reference to the database service
+var database = firebase.database();
+
+
 
 
 var redIcon = L.icon({			//set a marker icon for current location of user
