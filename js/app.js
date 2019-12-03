@@ -22,6 +22,8 @@ var pois = [];		//this array holds the position of point of interest
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  // Get a reference to the database service
+  var database = firebase.database();
 
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -41,8 +43,7 @@ var pois = [];		//this array holds the position of point of interest
   }
 });
 
-// Get a reference to the database service
-var database = firebase.database();
+
 
 
 
