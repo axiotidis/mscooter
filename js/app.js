@@ -78,8 +78,8 @@ function setPosition(position) {
 
   
 
-  const dbRef = firebase.database().ref();
-  const poiRef = dbRef.child('poi');
+  var dbRef = firebase.database().ref();
+  var poiRef = dbRef.child('poi');
 
 poiRef.on("child_added", snap => {
     let point = snap.val();
