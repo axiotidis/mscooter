@@ -23,7 +23,7 @@ var pois = [];		//this array holds the position of point of interest
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   // Get a reference to the database service
-  var database = firebase.database();
+  let database = firebase.database();
 
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -114,7 +114,23 @@ function setPosition(position) {
   map.setView([lat, lng], zoom);
   marker.bindPopup(mypopup).openPopup();
 }
-  var userId = firebase.auth().currentUser.uid;
+
+let ref = database.ref("poi/0"); 
+ref.on("value" , gotData , errData);
+
+function gotData(data){
+	data = data.val();
+	alert(data);
+	//let keys = Object.keys(data);
+	//console.log(keys[0]);
+	//console.log(data[0]);
+}
+
+function errData(error){
+	console.log(error.message , error.code);
+}
+
+  /*var userId = firebase.auth().currentUser.uid;
   var poiLat = firebase.database().ref('/poi/0/Lat/' + userId).once('value');
   var poiLng = firebase.database().ref('/poi/0/').once('value').Log;
   var poiPic = firebase.database().ref('/poi/0/').once('value').Pic;
@@ -126,7 +142,7 @@ alert(poiLat);
 	mypopup += "<br><br><b>";
 	mypopup += poiTxt;
 	mypopup += "</b>";
-	marker.bindPopup(mypopup).openPopup();
+	marker.bindPopup(mypopup).openPopup();*/
 
 
 function onLocationFound(e) {
