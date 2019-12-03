@@ -120,7 +120,7 @@ ref.on("value" , gotData , errData);
 
 function gotData(data){
 	data = data.val();
-	alert(data);
+	alert(data.name);
 	//let keys = Object.keys(data);
 	//console.log(keys[0]);
 	//console.log(data[0]);
