@@ -173,6 +173,7 @@ function gotSdata(data){
   	var mypopup = "<b>";		//prepare a custom popup 
 	mypopup += "SN: kom" + sId;
 	mypopup += "</b><br><br><b>";
+	mypopup += "Available: " + sBooked;
 	mypopup += "Battery: " + sBat +"%";
 	mypopup += "</b><br><b>";
 	mypopup += "1 EURO to unlock";
