@@ -93,20 +93,29 @@ function setPosition(position) {
   // Get a reference to the database service
   var database = firebase.database();
 
-  return firebase.database().ref('/poi01/').orderByChild('uid').equalTo(userUID).once('value').then(function(snapshot) {
+  return firebase.database().ref('/poi01/').orderByChild('Log').equalTo(userUID).once('value').then(function(snapshot) {
   var poiLng = snapshot.val().Log;
+  
+});
+return firebase.database().ref('/poi01/').orderByChild('Lat').equalTo(userUID).once('value').then(function(snapshot) {
   var poiLat = snapshot.val().Lat;
+  
+});
+return firebase.database().ref('/poi01/').orderByChild('name').equalTo(userUID).once('value').then(function(snapshot) {
   var poiTxt = snapshot.val().name;
+  
+});
+  return firebase.database().ref('/poi01/').orderByChild('Pic').equalTo(userUID).once('value').then(function(snapshot) {
   var poiPic = snapshot.val().Pic;
+  
+});
+  
   var marker = new L.marker([poiLat, poiLng], {icon: poiIcon}).addTo(map);	//set a marker in current geoposition
   var mypopup = "<img src= poiPic />";		//prepare a custom popup 
 	mypopup += "<br><br><b>";
 	mypopup += poiTxt;
 	mypopup += "</b>";
 	marker.bindPopup(mypopup).openPopup();
-});
-
-
 
 
 function onLocationFound(e) {
