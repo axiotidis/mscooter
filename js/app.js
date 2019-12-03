@@ -130,7 +130,7 @@ function gotData(data){
 	poiTxt = data.name;
 	
 	var marker = new L.marker([poiLat, poiLng], {icon: poiIcon}).addTo(map);	//set a marker in current geoposition
-  	var mypopup = "<img src= poiPic />";		//prepare a custom popup 
+  	var mypopup = "<img src= \"\" + poiPic />";		//prepare a custom popup 
 	mypopup += "<br><br><b>";
 	mypopup += poiTxt;
 	mypopup += "</b>";
