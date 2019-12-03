@@ -119,7 +119,7 @@ function setPosition(position) {
   var poiLng = firebase.database().ref('/poi/0/').once('value').Log;
   var poiPic = firebase.database().ref('/poi/0/').once('value').Pic;
   var poiTxt = firebase.database().ref('/poi/0/').once('value').name;
-
+alert(poiLat);
 
   var marker = new L.marker([poiLat, poiLng], {icon: poiIcon}).addTo(map);	//set a marker in current geoposition
   var mypopup = "<img src= poiPic />";		//prepare a custom popup 
