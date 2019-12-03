@@ -94,19 +94,19 @@ function setPosition(position) {
   var database = firebase.database();
   var userId = firebase.auth().currentUser.uid;
 
-  return firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
+  firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
   var poiLng = snapshot.val().Log;
   
 });
-return firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
+ firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
   var poiLat = snapshot.val().Lat;
   
 });
-return firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
+ firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
   var poiTxt = snapshot.val().name;
   
 });
-  return firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
+  firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
   var poiPic = snapshot.val().Pic;
   
 });
