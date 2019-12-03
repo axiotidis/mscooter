@@ -76,24 +76,12 @@ function setPosition(position) {
   marker.bindPopup(mypopup).openPopup();
 }
 
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDU1RPg4avyJA4Dv4DCGtGb2nnne8FZCfk",
-    authDomain: "escooter-d43d9.firebaseapp.com",
-    databaseURL: "https://escooter-d43d9.firebaseio.com",
-    projectId: "escooter-d43d9",
-    storageBucket: "escooter-d43d9.appspot.com",
-    messagingSenderId: "27699640672",
-    appId: "1:27699640672:web:05eb2d79cca519e28d4605",
-    measurementId: "G-F2V4WNEBRW"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  
 
   // Get a reference to the database service
   var database = firebase.database();
   var userId = firebase.auth().currentUser.uid;
-
+  alert(userId);
   firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
   var poiLng = snapshot.val().Log;
   
