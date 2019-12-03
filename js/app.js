@@ -119,8 +119,12 @@ function setPosition(position) {
   marker.bindPopup(mypopup).openPopup();
 }
 
-let ref = database.ref("poi/0"); 
-ref.on("value" , gotData , errData);
+var i;
+for (i = 0; i < 11; i++) {
+  	let ref = database.ref("poi/0"); 
+	ref.on("value" , gotData , errData);
+} 
+
 
 function gotData(data){
 	data = data.val();
@@ -136,7 +140,7 @@ function gotData(data){
 	mypopup += "</b>";
 	marker.bindPopup(mypopup).openPopup();
 	
-	alert(data.Pic);
+	//alert(data.Pic);
 	//let keys = Object.keys(data);
 	//console.log(keys[0]);
 	//console.log(data[0]);
