@@ -91,7 +91,7 @@ function setPosition(position) {
   //firebase.initializeApp(firebaseConfig);
 
   // Get a reference to the database service
-  var database = firebase.database();
+  //var database = firebase.database();
   var userId = firebase.auth().currentUser.uid;
 
   firebase.database().ref('/poi01/' + userId).once('value').then(function(snapshot) {
