@@ -136,7 +136,7 @@ function gotData(data){
 	mypopup += "</b>";
 	marker.bindPopup(mypopup).openPopup();
 	
-	//alert(data.name);
+	alert(data.Pic);
 	//let keys = Object.keys(data);
 	//console.log(keys[0]);
 	//console.log(data[0]);
