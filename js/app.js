@@ -1,8 +1,8 @@
 
 var basemap = new L.TileLayer(baseUrl, {maxZoom: 19, attribution: baseAttribution, subdomains: subdomains, opacity: opacity});
 
-var lat = 41.11598494054161;		//set initial value latitude
-var lng = 25.403566360473633;		//set initial value lognitude
+var klat = 41.11598494054161;		//set initial value latitude
+var klng = 25.403566360473633;		//set initial value lognitude
 var poiLat = 0;		//set initial value latitude for poi
 var poiLng = 0;		//set initial value lognitude for poi
 var poiTxt = "";
@@ -105,7 +105,7 @@ var poiIcon = L.icon({			//set a marker icon for pois
 	popupAnchor:  [-6, -86] // point from which the popup should open relative to the iconAnchor
 });
 //center and zoom map in a position found by geolocation
-var center = new L.LatLng(lat, lng);
+var center = new L.LatLng(klat, klng);
 //var map = new L.map('map', {center: center, zoomControl: false, maxZoom: maxZoom, layers: [basemap] });
 var map = new L.map('map', {center: center, zoomControl: false, minZoom: 0, maxZoom: 50, layers: [basemap] });
 var popup = L.popup();
@@ -120,7 +120,7 @@ function setPosition(position) {
   lng = position.coords.longitude.toString();		//find lognitude
   var marker = new L.marker([lat, lng], {icon: redIcon}).addTo(map);	//set a marker in current geoposition
   var mypopup = "You are here";
-  map.setView([lat, lng], zoom);
+  map.setView([klat, klng], zoom);			//No auto pan!!!!!!!!!!!!!!!!
   marker.bindPopup(mypopup).openPopup();
 }
 
