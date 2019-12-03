@@ -25,6 +25,52 @@ body
   font-family: "Avenir Next", "Avenir", sans-serif;
 }
 
+.greenButton {
+  position: absolute;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 16px;
+  top: 70.03%;
+  width: 24.92%;
+  height: 24%;
+  left: 58%;
+  cursor: pointer;
+}
+
+.greenButton:hover {
+  background-color: green;
+}
+
+.redButton {
+  position: absolute;
+  background-color: #ff8080;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 16px;
+  top: 70.03%;
+  width: 24.92%;
+  height: 24%;
+  left: 17%;
+  cursor: pointer;
+}
+
+.redButton:hover {
+  background-color: red;
+}
+
+div.buttons {
+  position: absolute;
+  left: 0%;
+  width: 100%;
+  top: 70%;
+  height: 24%;
+} 
+
 #menuToggle
 {
   display: block;
@@ -219,6 +265,11 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
     <script src="js/leaflet.label.js"></script>
     <script src="config.js"></script>
     <script src="js/app.js"></script>
+
+    <div class="buttons">
+      <button class="redButton" id="cancel">CANCEL</button>
+      <button class="greenButton" id="book">BOOK</button>
+    </div>
   
 </body>
 </html>
