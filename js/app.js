@@ -156,13 +156,13 @@ function errData(error){
 	console.log(error.message , error.code);
 }
 
-function gotSdata(data){
-	data = data.val();
-	sLat = data.Lat;
-	sLng = data.Log;
-	sBat = data.Bat;
-	sBooked = data.Booked;
-	sId = data.ID;
+function gotSdata(sdata){
+	data = sdata.val();
+	sLat = sdata.Lat;
+	sLng = sdata.Log;
+	sBat = sdata.Bat;
+	sBooked = sdata.Booked;
+	sId = sdata.ID;
 	
 	if (sBooked == "No"){
 		var marker = new L.marker([sLat, sLng], {icon: greenScooter}).addTo(map);	//set a marker in current geoposition
@@ -193,8 +193,8 @@ function gotSdata(data){
 
 }
 
-function errSdata(error){
-	console.log(error.message , error.code);
+function errSdata(serror){
+	console.log(serror.message , serror.code);
 }  
 
   
