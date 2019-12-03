@@ -88,7 +88,7 @@ function setPosition(position) {
     measurementId: "G-F2V4WNEBRW"
   };
   // Initialize Firebase
-  //firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);
 
   // Get a reference to the database service
   //var database = firebase.database();
