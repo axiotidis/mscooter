@@ -198,13 +198,13 @@ function errSdata(error){
 	console.log(error.message , error.code);
 }  
 
-function onMapClick(e) {
-   var popup = e.layer.getPopup();
+function onClick(e) {
+   var popup = e.target.getPopup();
    var content = popup.getContent();
 
-   alert(content);
+   console.log(content);
 }
-map.on('click', onMapClick);
+map.on('click', onClick);
   
 function onLocationFound(e) {
         //do nothing
