@@ -201,7 +201,8 @@ function errSdata(error){
 }  
 
 function onClick(e) {
-   var popup = e.target.getPopup();
+   //var popup = e.target.getPopup();
+   var popup =L.popup().getPopup();
    var content = popup.getContent();
 
    console.log(content);
