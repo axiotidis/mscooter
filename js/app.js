@@ -191,8 +191,11 @@ function gotSdata(sdata){
 	mypopup += "If it is ok press the ";
 	mypopup += "<b>";
 	mypopup += "BOOK button";
-	mypopup += "</b><br>";
-	marker.bindPopup(mypopup);
+	mypopup += "</b><br><br>";
+	mypopup += '<a href="#" class="speciallink">TestLink</a>';
+	marker.bindPopup(mypopup).click(function() {
+    alert("test");
+});
 
 }
 
