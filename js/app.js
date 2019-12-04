@@ -199,10 +199,10 @@ function errSdata(error){
 }  
 
 function onMapClick(e) {
-   var popup = e.layer.getPopup();
-   var content = popup.getContent();
+   //var popup = e.layer.getPopup();
+   //var content = popup.getContent();
 
-   alert(content);
+   alert("click");
 }
   
 
