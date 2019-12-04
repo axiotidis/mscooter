@@ -174,6 +174,23 @@ function gotSdata(sdata){
 		
 		available = "No";
 	}
+var bookBtn = '<div>\
+<style>\
+.button {\
+  background-color: #4CAF50;\
+  border: none;\
+  color: white;\
+  padding: 15px 32px;\
+  text-align: center;\
+  text-decoration: none;\
+  display: inline-block;\
+  font-size: 16px;\
+  margin: 4px 2px;\
+  cursor: pointer;\
+}\
+</style>\
+<button class="button" type="button" onclick="bookFunction()">BOOK this e-scooter</button>\
+</div>';
 	
   	var mypopup = "<b>";		//prepare a custom popup 
 	mypopup += "SN: kom" + sId;
@@ -192,7 +209,7 @@ function gotSdata(sdata){
 	mypopup += "<b>";
 	mypopup += "BOOK button";
 	mypopup += "</b><br><br>";
-	mypopup += "<button type=\"button\" onclick=\"bookFunction()\">BOOK this e-scooter</button>";
+	mypopup += bookBtn;
 	marker.bindPopup(mypopup);
 
 }
