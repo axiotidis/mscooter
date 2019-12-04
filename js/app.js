@@ -167,11 +167,11 @@ function gotSdata(sdata){
 	
 	if (sBooked == "No"){
 		var marker = new L.marker([sLat, sLng], {icon: greenScooter}).addTo(map);	//set a marker in current geoposition
-		marker.on('click', onClick);
+		
 		available = "Yes";
 	} else {
 		var marker = new L.marker([sLat, sLng], {icon: redScooter}).addTo(map);	//set a marker in current geoposition
-		marker.on('click', onClick);
+		
 		available = "No";
 	}
 	
@@ -200,13 +200,7 @@ function errSdata(error){
 	console.log(error.message , error.code);
 }  
 
-function onClick(e) {
-   //var popup = e.target.getPopup();
-   var popup =L.popup().getPopup();
-   var content = popup.getContent();
 
-   console.log(content);
-}
 
   
 function onLocationFound(e) {
