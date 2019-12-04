@@ -204,7 +204,7 @@ function onClick(e) {
 
    console.log(content);
 }
-map.on('click', onClick);
+marker.on('click', onClick);
   
 function onLocationFound(e) {
         //do nothing
