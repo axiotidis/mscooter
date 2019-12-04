@@ -192,7 +192,7 @@ function gotSdata(sdata){
 	mypopup += "<b>";
 	mypopup += "BOOK button";
 	mypopup += "</b><br><br>";
-	mypopup += '<button type="button" onclick="alert('Hello world!')">Click Me!</button>';
+	mypopup += "<button type=\"button\" onclick=\"alert(\'Hello world!\')\">Click Me!</button>";
 	marker.bindPopup(mypopup);
 
 }
