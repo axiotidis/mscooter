@@ -131,7 +131,7 @@ for (i = 0; i < 11; i++) {
 } 
 
 var j;
-for (j = 0; j < 11; j++) {
+for (j = 0; j < 6; j++) {
   	let ref = database.ref("scooters/" +j); 
 	ref.on("value" , gotSdata , errSdata);
 } 
@@ -156,13 +156,13 @@ function errData(error){
 	console.log(error.message , error.code);
 }
 var available = "";
-function gotSdata(data){
-	data = data.val();
-	sLng = data.Log;
-	sLat = data.Lat;
-	sBat = data.Bat;
-	sBooked = data.Booked;
-	sId = data.ID;
+function gotSdata(sdata){
+	sdata = sdata.val();
+	sLng = sdata.Log;
+	sLat = sdata.Lat;
+	sBat = sdata.Bat;
+	sBooked = sdata.Booked;
+	sId = sdata.ID;
 	
 	
 	if (sBooked == "No"){
