@@ -198,6 +198,12 @@ function errSdata(error){
 	console.log(error.message , error.code);
 }  
 
+function onClick(e) {
+   var popup = e.target.getPopup();
+   var content = popup.getContent();
+
+   alert(content);
+}
   
 
 
