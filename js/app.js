@@ -183,7 +183,7 @@ function gotSdata(sdata){
   cursor: pointer;\
 }\
 </style>\
-<button class="button" type="button" onclick="bookFunction()">BOOK this e-scooter</button>\
+<button class="button" type="button" onclick="bookFunction(sId)">BOOK this e-scooter</button>\
 </div>';
 	
   	var mypopup = "<b>";		//prepare a custom popup 
@@ -221,8 +221,8 @@ function gotSdata(sdata){
 
 }
 
-function bookFunction(){
-	alert("book success");
+function bookFunction(sId){
+	alert("book success " +sId);
 }
 
 function errSdata(error){
