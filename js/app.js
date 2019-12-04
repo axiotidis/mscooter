@@ -183,7 +183,7 @@ function gotSdata(sdata){
   cursor: pointer;\
 }\
 </style>\
-<button class="button" type="button" onclick="bookFunction(sId)">BOOK this e-scooter</button>\
+<button class="button" type="button" onclick="bookFunction()">BOOK this e-scooter</button>\
 </div>';
 	
   	var mypopup = "<b>";		//prepare a custom popup 
@@ -210,19 +210,19 @@ function gotSdata(sdata){
 		var marker = new L.marker([sLat, sLng], {icon: redScooter}).addTo(map);	//set a marker in current geoposition
 		available = "No";
 		var mypopup = "<b>";		//prepare a custom popup 
-	mypopup += "SN: kom" + sId;
-	mypopup += "</b><br><br><b>";
-	mypopup += "Available: " + available;
-	mypopup += "</b><br>";
-	marker.bindPopup(mypopup);
+		mypopup += "SN: kom" + sId;
+		mypopup += "</b><br><br><b>";
+		mypopup += "Available: " + available;
+		mypopup += "</b><br>";
+		marker.bindPopup(mypopup);
 		
 	}
 
 
 }
 
-function bookFunction(sId){
-	alert("book success " +sId);
+function bookFunction(){
+	alert("The e-scooter is booked successfully");
 }
 
 function errSdata(error){
