@@ -167,14 +167,7 @@ function gotSdata(sdata){
 	
 	if (sBooked == "No"){
 		var marker = new L.marker([sLat, sLng], {icon: greenScooter}).addTo(map);	//set a marker in current geoposition
-		
-		available = "Yes";
-	} else {
-		var marker = new L.marker([sLat, sLng], {icon: redScooter}).addTo(map);	//set a marker in current geoposition
-		
-		available = "No";
-	}
-var bookBtn = '<div>\
+		var bookBtn = '<div>\
 <style>\
 .button {\
   background-color: #4CAF50;\
@@ -211,6 +204,18 @@ var bookBtn = '<div>\
 	mypopup += "</b><br><br>";
 	mypopup += bookBtn;
 	marker.bindPopup(mypopup);
+		available = "Yes";
+	} else {
+		var marker = new L.marker([sLat, sLng], {icon: redScooter}).addTo(map);	//set a marker in current geoposition
+		var mypopup = "<b>";		//prepare a custom popup 
+	mypopup += "SN: kom" + sId;
+	mypopup += "</b><br><br><b>";
+	mypopup += "Available: " + available;
+	mypopup += "</b><br>";
+	marker.bindPopup(mypopup);
+		available = "No";
+	}
+
 
 }
 
