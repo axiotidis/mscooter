@@ -158,8 +158,8 @@ function errData(error){
 var available = "";
 function gotSdata(data){
 	data = data.val();
-	sLat = data.Lat;
 	sLng = data.Log;
+	sLat = data.Lat;
 	sBat = data.Bat;
 	sBooked = data.Booked;
 	sId = data.ID;
