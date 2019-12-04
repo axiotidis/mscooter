@@ -204,6 +204,7 @@ function onMapClick(e) {
 
    alert("click");
 }
+map.on('click', onMapClick);
   
 
 
