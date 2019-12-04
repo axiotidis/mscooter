@@ -222,7 +222,7 @@ function gotSdata(sdata){
 }
 
 function bookFunction(){
-	var bookMessage = 'The e-scooter is booked successfully\r\rwhen you reach the scooter\rsend a free sms to 6912345678\rwith: UNLOCK 1234567890\rto start the ride\r\rIf you want to pause for a while\rsend a free sms to 6912345678\rwith: PAUSE 1234567890\r\rIf you want to stop the ride\rsend an sms to 6912345678\rwith: LOCK 1234567890\rthen you will be charged for the ride.';
+	var bookMessage = 'The e-scooter is booked successfully\r\rwhen you reach the scooter\rsend a free sms to 6912345678\rwith: UNLOCK 1234567890\rto start the ride.\rIf you want to pause for a while\rsend a free sms to 6912345678\rwith: PAUSE 1234567890.\rIf you want to stop the ride\rsend an sms to 6912345678\rwith: LOCK 1234567890\rthen you will be charged for the ride.';
 
 	alert(bookMessage);
 }
