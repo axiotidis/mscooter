@@ -233,7 +233,7 @@ with: PAUSE 1234567890<br><br>\
 If you want to stop the ride<br>\
 send an sms to 6912345678<br>\
 with: LOCK 1234567890<br>\
-then you will be charged for the ride.'
+then you will be charged for the ride.';
 	alert(bookMessage);
 }
 
