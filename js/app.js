@@ -206,8 +206,6 @@ function onMapClick(e) {
 }
 map.on('click', onMapClick);
   
-
-
 function onLocationFound(e) {
         //do nothing
 	
