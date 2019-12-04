@@ -167,9 +167,11 @@ function gotSdata(sdata){
 	
 	if (sBooked == "No"){
 		var marker = new L.marker([sLat, sLng], {icon: greenScooter}).addTo(map);	//set a marker in current geoposition
+		marker.on('click', onClick);
 		available = "Yes";
 	} else {
 		var marker = new L.marker([sLat, sLng], {icon: redScooter}).addTo(map);	//set a marker in current geoposition
+		marker.on('click', onClick);
 		available = "No";
 	}
 	
@@ -204,7 +206,7 @@ function onClick(e) {
 
    console.log(content);
 }
-marker.on('click', onClick);
+
   
 function onLocationFound(e) {
         //do nothing
