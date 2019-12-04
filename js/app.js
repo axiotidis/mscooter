@@ -198,7 +198,7 @@ function errSdata(error){
 	console.log(error.message , error.code);
 }  
 
-function onClick(e) {
+function onMapClick(e) {
    var popup = e.target.getPopup();
    var content = popup.getContent();
 
