@@ -10,11 +10,88 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#config-web-app -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDU1RPg4avyJA4Dv4DCGtGb2nnne8FZCfk",
+    authDomain: "escooter-d43d9.firebaseapp.com",
+    databaseURL: "https://escooter-d43d9.firebaseio.com",
+    projectId: "escooter-d43d9",
+    storageBucket: "escooter-d43d9.appspot.com",
+    messagingSenderId: "27699640672",
+    appId: "1:27699640672:web:05eb2d79cca519e28d4605",
+    measurementId: "G-F2V4WNEBRW"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+ <script type="text/javascript">
+	 /**
+     * Handles the sign up button press.
+     */
+     function handleSignUp() {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var cpassword = document.getElementById('cpassword').value;
+      var phone = document.getElementById('phone').value;
+      if (email.length < 4) {
+        alert('Please enter an email address.');
+        return;
+      }
+      if (password.length < 4) {
+        alert('Please enter a password.');
+        return;
+      }
+	  if (password !== cpassword) {
+        alert('Password doesn\'t match');
+        return;
+      }
+      // Sign in with email and pass.
+      // [START createwithemail]
+      firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user){
+	      alert('You are a registered user now!');
+	      location.replace("signin.html");})
+	      .catch(function(error) {
+	      
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+		
+        // [START_EXCLUDE]
+        if (errorCode == 'auth/weak-password') {
+		  
+          alert('The password is too weak.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+        // [END_EXCLUDE]
+		
+      });
+      // [END createwithemail]
+	  
+    }
+	
+	function initApp() {
+	document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
+	}
+	
+	window.onload = function() {
+      initApp();
+    };
+ </script>
   <div class="container">
     <h1 class="brand"><span>Driving e-scooter</span> in the city of Komotini</h1>
     <div class="wrapper-singup">
             <div class="user-info">
-                <h3>Εγγραφή Χρήστη</h3>
+                <h3>User Registration</h3>
                 <img src="pics/escooter.png" alt="e-scooter" class="imgrespo" width="150" height="150">
             </div>
             <div class="singup">
@@ -27,7 +104,7 @@
                     </p>
                     <p>
                         <label>Mobile Phone</label>
-                        <input type="text" name="username" id="username" required>
+                        <input type="text" name="username" id="phone" required>
                     </p>
                     <p>
                         <label>Password</label>
@@ -35,7 +112,7 @@
                     </p>
                     <p>
                         <label>Confirm Password</label>
-                        <input type="password" name="confirmpassword" id="confirmpassword" required>
+                        <input type="password" name="confirmpassword" id="cpassword" required>
                     </p>
 		    <p>
 			<label>Payment Method</label>
@@ -50,10 +127,10 @@
 		    </p>
                     
                     <p class="full">
-                        <button type="submit">Sign Up</button>
+                        <button type="submit" id="quickstart-sign-up">Sign Up</button>
                     </p>
 					
-					<p class="full">
+		<p class="full">
                         <button onclick="window.location.href = 'signin.html';">Cancel</button>
                     </p>
                 </form>
