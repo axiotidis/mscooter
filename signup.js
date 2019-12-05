@@ -27,10 +27,11 @@ function submitForm(e){
     var phone = getInputVal('phone');
     var password = getInputVal('password');
     var payment = getInputVal('payment');
+    var points = 0;
 
     // Save message
     saveUser(email, password);
-    saveMessage(email, phone, password, payment);
+    saveMessage(email, phone, points, payment);
 
     //Show alert
     document.querySelector('.alert').style.display = 'block';
@@ -62,12 +63,12 @@ function getInputVal(id){
 }
 
 //Save the massage to firebase
-function saveMessage(email, phone, password, payment){
+function saveMessage(email, phone, points, payment){
     var newUsersRef = usersRef.push();
     newUsersRef.set({
         email: email,
         phone: phone,
-        password: password,
+        points: points,
         payment: payment
     });
 }
