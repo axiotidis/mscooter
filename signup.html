@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>User Sign up</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="brand"><span>Driving e-scooter</span> in the city of Komotini</h1>
+    <div class="wrapper-singup">
+            <div class="user-info">
+                <h3>Εγγραφή Χρήστη</h3>
+                <img src="pics/escooter.png" alt="e-scooter" class="imgrespo" width="150" height="150">
+            </div>
+            <div class="singup">
+                <div class="alert">Sign up completed successfully</div>
+                <div class="continue">Continue to the map</div>
+                <form id="singupForm">
+                    <p>
+                        <label>Email Address</label>
+                        <input type="email" name="email" id="email" required>
+                    </p>
+                    <p>
+                        <label>Mobile Phone</label>
+                        <input type="text" name="username" id="username" required>
+                    </p>
+                    <p>
+                        <label>Password</label>
+                        <input type="password" name="password" id="password" required>
+                    </p>
+                    <p>
+                        <label>Confirm Password</label>
+                        <input type="password" name="confirmpassword" id="confirmpassword" required>
+                    </p>
+					<p>
+						<label>Payment Method</label>
+						<input type="radio" name="paymethod" value="paypal">PayPal<br>
+						<input type="radio" name="paymethod" value="creditcard">Credit Card<br>
+						<input type="radio" name="paymethod" value="sms" checked="checked">SMS<br>
+					</p>
+                    
+                    <p class="full">
+                        <button type="submit">Sign Up</button>
+                    </p>
+					
+					<p class="full">
+                        <button onclick="window.location.href = 'signin.html';">Cancel</button>
+                    </p>
+                </form>
+                <p>
+                    <input type="checkbox" name="termsandprivacy" value="tp" checked>I agree with terms of use and privacy
+                </p>
+            </div>
+    </div>
+    
+</body>
+</html>
