@@ -29,7 +29,7 @@ function submitForm(e){
     var payment = getInputVal('payment');
 
     // Save message
-	saveUser(email, password);
+    saveUser(email, password);
     saveMessage(email, phone, password, payment);
 
     //Show alert
@@ -71,7 +71,7 @@ function saveMessage(email, phone, password, payment){
         payment: payment
     });
 }
-function saveMessage(email, password){
+function saveUser(email, password){
 	firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
 	      
 		// Handle Errors here.
