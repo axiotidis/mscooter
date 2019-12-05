@@ -1,5 +1,5 @@
 //Listen for form submit
-document.getElementById('contactForm').addEventListener('submit', submitForm);
+document.getElementById('singupForm').addEventListener('submit', submitForm);
 
 //Submit form
 function submitForm(e){
@@ -23,7 +23,7 @@ function submitForm(e){
     },2000);
 
     //Clear form
-    document.getElementById('contactForm').reset();
+    document.getElementById('singupForm').reset();
 
     setTimeout(function(){
         document.querySelector('.continue').style.display = 'block';
