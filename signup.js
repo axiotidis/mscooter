@@ -50,7 +50,7 @@ function submitForm(e){
 
     setTimeout(function(){
         document.querySelector('.continue').style.display = 'none';
-        window.location.replace("map-master/signin.html");
+        window.location.replace("signin.html");
     },4000);
 
 }
