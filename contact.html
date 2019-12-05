@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+	.gwd-txtarea-1 {
+      border: 1px solid rgb(0, 0, 0);
+      background-color: rgb(255, 255, 255);
+      width: 100%;
+      padding: 0px;
+      margin: 0px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="brand"><span>Driving e-scooter</span> in the city of Komotini</h1>
+    <div class="wrapper-singup">
+            <div class="user-info">
+                <h3>Contact</h3>
+                <img src="pics/escooter.png" alt="e-scooter" class="imgrespo" width="150" height="150">
+            </div>
+            <div class="singin">
+                <form>
+                    <p class="full">
+                        
+                        <input type="text" name="lName" placeholder="Last Name">
+                    </p>
+                    <p class="full">
+                        
+                        <input type="text" name="fName" placeholder="First Name">
+                    </p>
+                    <p class="full">
+                        <input type="text" name="email" placeholder="Email">
+                    </p>
+                    <p class="full">
+                        <input type="text" name="subject" placeholder="Subject">
+                    </p>
+					<p>
+						<textarea class="gwd-txtarea-1" id="txtarea" cols="50" rows="5" placeholder="Place your message here.."></textarea>
+					</p>
+                    </p>                    
+                    <p class="full">
+                        <button onclick="sendMessage()">Send</button>
+                    </p>
+                    
+                </form>
+            </div>
+    </div>
+  </div>
+  <script>
+	function sendMessage() {
+		alert("Thank you! Your message has been sent successfully");
+		location.replace("app.html");
+	}
+  </script>
+</body>
+</html>
