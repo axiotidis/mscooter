@@ -178,7 +178,13 @@
     padding:1em;
     border:1px solid #c9e6ff;
   }
-  
+  .singin form txtarea{
+     background-color: rgb(255, 255, 255);
+     width:100%;
+     padding:1em;
+     border:1px solid #c9e6ff;
+}
+
   .singin form button{
     background:#c9e6ff;
     border:0;
