@@ -113,7 +113,8 @@
 
   .singin{
     background:#f9feff;
-    width:100%;
+    width:auto;
+    height:auto;
   }
 
 
