@@ -32,9 +32,9 @@ function submitForm(e){
     var bday = getInputVal('bday');
     var points = 0;
     var today = new Date()
-    var difference = (today.getFullYear() - bday.substring(0,3));
+    var difference = (today.getFullYear() - bday.substring(0,4));
     console.log("Today is: " + today.getFullYear());
-    console.log("The date of birth is: " + bday.substring(0,3));
+    console.log("The date of birth is: " + bday.substring(0,4));
     console.log("The difference is: " + difference + " years.");
 }//****************************************************NA TO VGALO META*******************************
 /*********************************************************************
