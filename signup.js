@@ -33,7 +33,7 @@ function submitForm(e){
     var points = 0;
     var today = new Date();
     var difference = (today - bday)/(1000*60*60*24*365);
-    alert(Number(difference));
+    alert(difference.toFixed(1));
 }//****************************************************NA TO VGALO META*******************************
 /*********************************************************************
     // Save user's details
