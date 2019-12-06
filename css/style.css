@@ -190,6 +190,7 @@
      padding:1em;
      box-sizing: border-box;
      border:1px solid #c9e6ff;
+     resize: none;
 }
 
   .singin form button{
