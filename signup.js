@@ -33,12 +33,8 @@ function submitForm(e){
     var points = 0;
     var today = new Date()
     var difference = (today.getFullYear() - bday.substring(0,4));
-    console.log("Today is: " + today.getFullYear());
-    console.log("The date of birth is: " + bday.substring(0,4));
-    console.log("The difference is: " + difference + " years.");
-    alert(difference);
-}//****************************************************NA TO VGALO META*******************************
-/*********************************************************************
+    if (difference > 17){
+
     // Save user's details
     saveUser(email, password);
     saveDetails(email, phone, points, payment, lname, fname, bday);
@@ -64,14 +60,16 @@ function submitForm(e){
     },4000);
 
 }
+} else {
+	alert("You must be adult to rent a scooter");
+}
 
-*////////////////////////////////////////////////////////////////////////////////
 
 //Function to get form values
 function getInputVal(id){
     return document.getElementById(id).value;
 }
-/******************************************************************************
+
 //Save the massage to firebase
 function saveDetails(email, phone, points, payment, lname, fname, bday){
     var newUsersRef = usersRef.push();
@@ -104,4 +102,4 @@ function saveUser(email, password){
 	
 });
 }      // [END createwithemail]
-**********************************************************************************/
+
