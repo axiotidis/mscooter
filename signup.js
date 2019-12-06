@@ -31,7 +31,10 @@ function submitForm(e){
     var fname = getInputVal('fname');
     var bday = getInputVal('bday');
     var points = 0;
-
+    var today = new Date();
+    var difference = (today - bday)/((1000*60*60*24*365);
+    alert(difference);
+/*********************************************************************
     // Save user's details
     saveUser(email, password);
     saveDetails(email, phone, points, payment, lname, fname, bday);
@@ -97,3 +100,4 @@ function saveUser(email, password){
 	
 });
 }      // [END createwithemail]
+**********************************************************************************/
