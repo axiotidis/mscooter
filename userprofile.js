@@ -33,7 +33,7 @@ function readUserData(email){
 	usersRef.on("child_added", function(snapshot) {
     	console.log(snapshot.child("email").val());
 });
-	
+}	
 
 /*********************************************************
   //Reference messages collection
