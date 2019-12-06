@@ -65,20 +65,7 @@
                 
             </div>
     </div>
-    <script>
-        window.onload = function () {
-            var txtPassword = document.getElementById("password");
-            var txtConfirmPassword = document.getElementById("cpassword");
-            txtPassword.onchange = ConfirmPassword;
-            txtConfirmPassword.onkeyup = ConfirmPassword;
-            function ConfirmPassword() {
-                txtConfirmPassword.setCustomValidity("");
-                if (txtPassword.value != txtConfirmPassword.value) {
-                    txtConfirmPassword.setCustomValidity("Passwords do not match.");
-                }
-            }
-        }
-    </script>
+    
   </div>
 	<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase.js"></script>
 	<!-- TODO: Add SDKs for Firebase products that you want to use
