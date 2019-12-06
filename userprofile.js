@@ -29,13 +29,9 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
 function readUserData(email){
-	var usersRef = firebase.database().ref("users");
-	usersRef.on("child_added", function(snapshot) {
-		if (snapshot.child("email").val() == email){
-			alert(snapshot.val());
-			alert(snapshot.child("email").val());
-			      }
-    	//console.log(snapshot.child("email").val());
+	var ref = firebase.database().ref('users');
+	ref.orderByChild('email').equalTo(email).on("value", function(snapshot) {
+  	snapshot.forEach((function(child) { console.log(child.key) }); 
 });
 }	
 
