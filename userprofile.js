@@ -11,7 +11,33 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  // Get a reference to the database service
+  let database = firebase.database();
 
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    user = firebase.auth().currentUser;
+    var email = user.email;
+    //read user details
+    readUserData(email);
+  } else {
+    location.replace("signin.html");
+  }
+});
+
+function readUserData(email){
+	let ref = database.ref("users/"); 
+	ref.on("value" , gotData , errData);
+	
+}
+
+function gotData(data){
+	data = data.val();
+	alert(data)
+
+}
+/*********************************************************
   //Reference messages collection
   var usersRef = firebase.database().ref('users');
   
@@ -92,3 +118,4 @@ function saveUser(email, password){
 	
 });
 }      // [END createwithemail]
+***********************************************************************/
