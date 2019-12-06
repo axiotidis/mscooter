@@ -1,4 +1,10 @@
-  // Your web app's Firebase configuration
+var userEmail ="";
+var userPhone =0;
+var userPayment = "";
+var updPassword ="";
+var updCnfPassword ="";
+
+// Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyDU1RPg4avyJA4Dv4DCGtGb2nnne8FZCfk",
     authDomain: "escooter-d43d9.firebaseapp.com",
@@ -45,9 +51,9 @@ function readUserData(email){
 
 function gotData(data){
 	data = data.val();
-	var userEmail = data.email;
-	var userPhone = data.phone;
-	var userPayment = data.payment;
+	userEmail = data.email;
+	userPhone = data.phone;
+	userPayment = data.payment;
 	document.getElementById("email").value = userEmail;
 	document.getElementById("phone").value = userPhone;
 	document.getElementById("payment").value = userPayment;
