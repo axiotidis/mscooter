@@ -32,7 +32,7 @@ function submitForm(e){
     var bday = getInputVal('bday');
     var points = 0;
     var today = new Date();
-    var difference = (today - bday)/((1000*60*60*24*365);
+    var difference = (today - bday)/(1000*60*60*24*365);
     alert(difference);
 }//****************************************************NA TO VGALO META*******************************
 /*********************************************************************
