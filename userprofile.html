@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>User Profile</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="brand"><span>Driving e-scooter</span> in the city of Komotini</h1>
+    <div class="wrapper-singup">
+            <div class="user-info">
+                <h3>User Profile</h3>
+                <img src="pics/escooter.png" alt="e-scooter" class="imgrespo" width="150" height="150">
+            </div>
+            <div class="singup">
+                <div class="alert">your profile has been updated successfully</div>
+                <div class="continue">Continue to the map</div>
+                <form id="profileForm">
+                    <p>
+                        
+                        <input type="email" name="email" id="email" placeholder = "Email Address" required>
+                    </p>
+		    <p>
+                        
+                        <input type="text" name="phone" id="phone" placeholder = "Mobile Phone" required>
+                    </p>
+                    
+                    <p>
+                       
+                        <input type="password" name="password" id="password" placeholder = "Password" title="Password must contain: Minimum 8 characters at least 1 Alphabet and 1 Number" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"required>
+                    </p>
+                    <p>
+                        
+                        <input type="password" name="confirmpassword" id="cpassword" placeholder = "Confirm Password" required>
+                    </p>
+                    
+					<p>
+						<label>Payment Method</label>
+						<select id="payment">
+							<option value="creditcard">Credit Card</option>
+							<option value="paypal">PayPal</option>
+							<option value="sms">SMS</option>
+						</select>
+					</p>
+					
+                    <p class="full">
+                        <button type="submit">Update</button>
+                    </p>
+					
+					<p class="full">
+                        <button onclick="window.location.href = 'app.html';">Cancel</button>
+                    </p>
+					
+                </form>
+                
+            </div>
+    </div>
+    <script>
+        window.onload = function () {
+            var txtPassword = document.getElementById("password");
+            var txtConfirmPassword = document.getElementById("cpassword");
+            txtPassword.onchange = ConfirmPassword;
+            txtConfirmPassword.onkeyup = ConfirmPassword;
+            function ConfirmPassword() {
+                txtConfirmPassword.setCustomValidity("");
+                if (txtPassword.value != txtConfirmPassword.value) {
+                    txtConfirmPassword.setCustomValidity("Passwords do not match.");
+                }
+            }
+        }
+    </script>
+  </div>
+	<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase.js"></script>
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+	https://firebase.google.com/docs/web/setup#config-web-app -->
+	<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
+	<script src="userprofile.js"></script>
+</body>
+</html>
