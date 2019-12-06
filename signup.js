@@ -62,13 +62,13 @@ function submitForm(e){
 
 }
 
-
+*////////////////////////////////////////////////////////////////////////////////
 
 //Function to get form values
 function getInputVal(id){
     return document.getElementById(id).value;
 }
-
+/******************************************************************************
 //Save the massage to firebase
 function saveDetails(email, phone, points, payment, lname, fname, bday){
     var newUsersRef = usersRef.push();
