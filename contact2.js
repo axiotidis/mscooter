@@ -80,7 +80,25 @@ function submitForm(e){
     var email = getInputVal('email');
     var fname = getInputVal('fname');
     var lname = getInputVal('lname');
-    
+    //Show alert
+    document.querySelector('.alert').style.display = 'block';
+
+    //Hide alert after 3 sec
+    setTimeout(function(){
+        document.querySelector('.alert').style.display = 'none';
+    },2000);
+
+    //Clear form
+    document.getElementById('singupForm').reset();
+
+    setTimeout(function(){
+        document.querySelector('.continue').style.display = 'block';
+    },2000);
+
+    setTimeout(function(){
+        document.querySelector('.continue').style.display = 'none';
+        window.location.replace("app.html");
+    },4000);
 	
 }
 
