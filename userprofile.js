@@ -1,8 +1,9 @@
 var userEmail ="";
 var userPhone =0;
 var userPayment = "";
-var updPassword ="";
-var updCnfPassword ="";
+var userFname = "";
+var userLname = "";
+var userBday = ""; 
 var dbKey ="";
 
 // Your web app's Firebase configuration
@@ -34,7 +35,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 
-
+//find user's records based on email address
 function readUserData(email){
 	var ref = firebase.database().ref("users");
 	ref.orderByChild("email").equalTo(email).on("child_added", function(snapshot) {
@@ -55,10 +56,15 @@ function gotData(data){
 	userEmail = data.email;
 	userPhone = data.phone;
 	userPayment = data.payment;
+	userFname = data.fname;
+	userLname = data.lname;
+	userBday = data.bday;
 	document.getElementById("email").value = userEmail;
 	document.getElementById("phone").value = userPhone;
 	document.getElementById("payment").value = userPayment;
-
+	document.getElementById("fname").value = userFname;
+	document.getElementById("lname").value = userLname;
+	document.getElementById("bday").value = userBday;
 }
 
 function errData(error){
@@ -81,13 +87,19 @@ function submitForm(e){
     //Get values
     var email = getInputVal('email');
     var phone = getInputVal('phone');
-    var password = getInputVal('password');
     var payment = getInputVal('payment');
-    
+    var fname = getInputVal('fname');
+    var lname = getInputVal('lname');
+    var bday = getInputVal('bday');
+	
+	var today = new Date();
+    var difference = (today.getFullYear() - bday.substring(0,4));
+    if (difference > 17){
+	
 
+    
     // update user details
-    //updateUser(email, password);
-    updateDetails(email, phone, payment);
+    updateDetails(email, phone, payment, fname, lname, bday);
 
     //Show alert
     document.querySelector('.alert').style.display = 'block';
@@ -108,7 +120,9 @@ function submitForm(e){
         document.querySelector('.continue').style.display = 'none';
         window.location.replace("app.html");
     },4000);
-
+	}else {
+	alert("You must be adult to rent a scooter");
+}
 }
 
 
@@ -119,32 +133,15 @@ function getInputVal(id){
 }
 
 //Save the details to firebase
-function updateDetails(email, phone, payment){
+function updateDetails(email, phone, payment, fname, lname, bday){
     database.ref("users/" + dbKey).update({ 
 	    email: email,
 	    phone: phone,
-	    payment: payment
+	    payment: payment,
+	    fname : fname,
+	    lname : lname,
+	    bday : bday
 	});
 
 }
-/**********************************************
-function updateUser(email, password){
-	firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-	      
-		// Handle Errors here.
-		var errorCode = error.code;
-		var errorMessage = error.message;
-		
-		// [START_EXCLUDE]
-		if (errorCode == 'auth/weak-password') {		  
-			alert('The password is too weak.');
-		}else {
-			alert(errorMessage);
-		}
-			console.log(error);
-			// [END_EXCLUDE]
-		
-	
-});
-}      // [END createwithemail]
-*******************************************/
+
