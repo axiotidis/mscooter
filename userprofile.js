@@ -29,13 +29,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
 function readUserData(email){
-	var ref = firebase.database().ref('users');
-	ref.orderByChild('email')
-	.equalTo(email)
-	.on("value")
-	.then (function(snapshot) {
-		snapshot.forEach((function(child) { console.log(child.key) })
+	var ref = firebase.database().ref("users");
+	ref.orderByChild("email").equalTo(email).on("child_added", function(snapshot) {
+		console.log(snapshot.key);
 	});
+	
 }	
 
 /*********************************************************
