@@ -26,21 +26,15 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
+
+
 function readUserData(email){
-	let ref = database.ref("users/"); 
-	ref.on("value" , gotData , errData);
+	var usersRef = firebase.database().ref("users");
+	usersRef.on("child_added", function(snapshot) {
+    	console.log(snapshot.child("email").val());
+});
 	
-}
 
-function gotData(data){
-	data = data.val();
-	alert(data)
-
-}
-
-function errData(error){
-	console.log(error.message , error.code);
-}
 /*********************************************************
   //Reference messages collection
   var usersRef = firebase.database().ref('users');
