@@ -34,6 +34,7 @@ function submitForm(e){
     var today = new Date();
     var difference = (today - bday)/((1000*60*60*24*365);
     alert(difference);
+}//****************************************************NA TO VGALO META*******************************
 /*********************************************************************
     // Save user's details
     saveUser(email, password);
