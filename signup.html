@@ -21,6 +21,15 @@
                 <div class="alert">congratulations! You are a registered user</div>
                 <div class="continue">Continue to the map</div>
                 <form id="singupForm">
+		    <p>
+                        
+                        <input type="text" name="lname" id="lname" placeholder = "Last Name" required>
+                    </p>
+			<p>
+                        
+                        <input type="text" name="fname" id="fname" placeholder = "First Name" required>
+                    </p>
+			
                     <p>
                         
                         <input type="email" name="email" id="email" placeholder = "Email Address" required>
@@ -38,15 +47,19 @@
                         
                         <input type="password" name="confirmpassword" id="cpassword" placeholder = "Confirm Password" required>
                     </p>
+			<p>
+                        <label>Date of Birth</label>
+                        <input type="date" name="bday">
+                    </p>
                     
-					<p>
-						<label>Payment Method</label>
-						<select id="payment">
-							<option value="creditcard">Credit Card</option>
-							<option value="paypal">PayPal</option>
-							<option value="sms">SMS</option>
-						</select>
-					</p>
+			<p>
+				<label>Payment Method</label>
+				<select id="payment">
+				<option value="creditcard">Credit Card</option>
+				<option value="paypal">PayPal</option>
+				<option value="sms">SMS</option>
+				</select>
+			</p>
 					
                     <p class="full">
                         <button type="submit">Sing Up</button>
