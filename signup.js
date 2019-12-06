@@ -31,7 +31,7 @@ function submitForm(e){
     var fname = getInputVal('fname');
     var bday = getInputVal('bday');
     var points = 0;
-    var today = new Date()
+    var today = new Date();
     var difference = (today.getFullYear() - bday.substring(0,4));
     if (difference > 17){
 
@@ -77,9 +77,9 @@ function saveDetails(email, phone, points, payment, lname, fname, bday){
         email: email,
         phone: phone,
         points: points,
-        payment: payment
-	lname : lname
-	fname : fname
+        payment: payment,
+	lname : lname,
+	fname : fname,
 	bday : bday
     });
 }
