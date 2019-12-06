@@ -31,10 +31,32 @@ firebase.auth().onAuthStateChanged(function(user) {
 function readUserData(email){
 	var ref = firebase.database().ref("users");
 	ref.orderByChild("email").equalTo(email).on("child_added", function(snapshot) {
-		console.log(snapshot.key);
+		//console.log(snapshot.key);
+	var key = snapshot.key;	
+	let ref = database.ref("users/" + key); 
+	ref.on("value" , gotSdata , errSdata);
 	});
 	
 }	
+
+
+  	
+
+
+function gotData(data){
+	data = data.val();
+	var userEmail = data.email;
+	var userPhone = data.phone;
+	var userPayment = data.payment;
+	document.getElementById("email").value = userEmail;
+	document.getElementById("phone").value = userPhone;
+	document.getElementById("payment").value = userPayment;
+
+}
+
+function errData(error){
+	console.log(error.message , error.code);
+}
 
 /*********************************************************
   //Reference messages collection
