@@ -59,12 +59,12 @@ function submitForm(e){
         window.location.replace("signin.html");
     },4000);
 
-}
+
 } else {
 	alert("You must be adult to rent a scooter");
 }
 
-
+}
 //Function to get form values
 function getInputVal(id){
     return document.getElementById(id).value;
