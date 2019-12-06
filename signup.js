@@ -36,6 +36,7 @@ function submitForm(e){
     console.log("Today is: " + today.getFullYear());
     console.log("The date of birth is: " + bday.substring(0,4));
     console.log("The difference is: " + difference + " years.");
+    alert(difference);
 }//****************************************************NA TO VGALO META*******************************
 /*********************************************************************
     // Save user's details
