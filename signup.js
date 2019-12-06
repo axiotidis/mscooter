@@ -27,11 +27,14 @@ function submitForm(e){
     var phone = getInputVal('phone');
     var password = getInputVal('password');
     var payment = getInputVal('payment');
+    var lname = getInputVal('lname');
+    var fname = getInputVal('fname');
+    var bday = getInputVal('bday');
     var points = 0;
 
-    // Save message
+    // Save user's details
     saveUser(email, password);
-    saveMessage(email, phone, points, payment);
+    saveDetails(email, phone, points, payment, lname, fname, bday);
 
     //Show alert
     document.querySelector('.alert').style.display = 'block';
@@ -63,13 +66,16 @@ function getInputVal(id){
 }
 
 //Save the massage to firebase
-function saveMessage(email, phone, points, payment){
+function saveDetails(email, phone, points, payment, lname, fname, bday){
     var newUsersRef = usersRef.push();
     newUsersRef.set({
         email: email,
         phone: phone,
         points: points,
         payment: payment
+	lname : lname
+	fname : fname
+	bday : bday
     });
 }
 function saveUser(email, password){
