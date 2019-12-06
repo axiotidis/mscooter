@@ -34,7 +34,7 @@ function readUserData(email){
 		//console.log(snapshot.key);
 	var key = snapshot.key;	
 	let ref = database.ref("users/" + key); 
-	ref.on("value" , gotSdata , errSdata);
+	ref.on("value" , gotData , errData);
 	});
 	
 }	
