@@ -120,7 +120,7 @@ function getInputVal(id){
 
 //Save the details to firebase
 function updateDetails(email, phone, payment){
-    db.ref("users/" + dbKey).update({ 
+    database.ref("users/" + dbKey).update({ 
 	    email: email,
 	    phone: phone,
 	    payment: payment
