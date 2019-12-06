@@ -36,7 +36,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 function readUserData(email){
 	var ref = firebase.database().ref("users");
 	ref.orderByChild("email").equalTo(email).on("child_added", function(snapshot) {
-		//console.log(snapshot.key);
+        console.log("snapshot key = "+snapshot.key);
 	dbKey = snapshot.key;	
 	let ref = database.ref("users/" + dbKey); 
 	ref.on("value" , gotData , errData);
@@ -89,7 +89,7 @@ function submitForm(e){
     },2000);
 
     //Clear form
-    document.getElementById('singupForm').reset();
+    document.getElementById('contactForm').reset();
 
     setTimeout(function(){
         document.querySelector('.continue').style.display = 'block';
