@@ -31,9 +31,9 @@ function submitForm(e){
     var fname = getInputVal('fname');
     var bday = getInputVal('bday');
     var points = 0;
-    var today = new Date();
+    var today = new Date()
     var difference = (Number(today) - Number(bday))/(1000*60*60*24*365);
-    console.log("Today is: " + today);
+    console.log("Today is: " + today.getFullYear());
     console.log("The date of birth is: " + bday);
     console.log("The difference is: " + difference.toFixed(1) + " years.");
 }//****************************************************NA TO VGALO META*******************************
