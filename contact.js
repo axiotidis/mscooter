@@ -65,7 +65,7 @@ function errData(error){
 
 
   //Reference messages collection
-  var usersRef = firebase.database().ref('users');
+  //var usersRef = firebase.database().ref('users');
   
   
 
@@ -77,9 +77,9 @@ function submitForm(e){
     e.preventDefault();
   
     //Get values
-    var email = getInputVal('email');
-    var fname = getInputVal('fname');
-    var lname = getInputVal('lname');
+    //var email = getInputVal('email');
+    //var fname = getInputVal('fname');
+    //var lname = getInputVal('lname');
     //Show alert
     document.querySelector('.alert').style.display = 'block';
 
