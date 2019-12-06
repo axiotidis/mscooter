@@ -98,7 +98,7 @@ function submitForm(e){
     },2000);
 
     //Clear form
-    document.getElementById('profilepForm').reset();
+    document.getElementById('profileForm').reset();
 
     setTimeout(function(){
         document.querySelector('.continue').style.display = 'block';
