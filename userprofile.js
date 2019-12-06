@@ -3,6 +3,7 @@ var userPhone =0;
 var userPayment = "";
 var updPassword ="";
 var updCnfPassword ="";
+var dbKey ="";
 
 // Your web app's Firebase configuration
   var firebaseConfig = {
@@ -38,8 +39,8 @@ function readUserData(email){
 	var ref = firebase.database().ref("users");
 	ref.orderByChild("email").equalTo(email).on("child_added", function(snapshot) {
 		//console.log(snapshot.key);
-	var key = snapshot.key;	
-	let ref = database.ref("users/" + key); 
+	dbKey = snapshot.key;	
+	let ref = database.ref("users/" + dbKey); 
 	ref.on("value" , gotData , errData);
 	});
 	
@@ -64,7 +65,7 @@ function errData(error){
 	console.log(error.message , error.code);
 }
 
-/*********************************************************
+
   //Reference messages collection
   var usersRef = firebase.database().ref('users');
   
@@ -84,9 +85,9 @@ function submitForm(e){
     var payment = getInputVal('payment');
     
 
-    // Save message
-    saveUser(email, password);
-    saveMessage(email, phone, payment);
+    // update user details
+    //updateUser(email, password);
+    updateDetails(email, phone, payment);
 
     //Show alert
     document.querySelector('.alert').style.display = 'block';
@@ -117,16 +118,17 @@ function getInputVal(id){
     return document.getElementById(id).value;
 }
 
-//Save the massage to firebase
-function saveMessage(email, phone, payment){
-    var newUsersRef = usersRef.push();
-    newUsersRef.set({
-        email: email,
-        phone: phone,
-        payment: payment
-    });
+//Save the details to firebase
+function updateDetails(email, phone, payment){
+    db.ref("users/" + dbKey).update({ 
+	    email: email,
+	    phone: phone,
+	    payment: payment
+	});
+
 }
-function saveUser(email, password){
+/**********************************************
+function updateUser(email, password){
 	firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
 	      
 		// Handle Errors here.
@@ -145,4 +147,4 @@ function saveUser(email, password){
 	
 });
 }      // [END createwithemail]
-***********************************************************************/
+*******************************************/
