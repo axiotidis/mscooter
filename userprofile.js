@@ -37,6 +37,10 @@ function gotData(data){
 	alert(data)
 
 }
+
+function errData(error){
+	console.log(error.message , error.code);
+}
 /*********************************************************
   //Reference messages collection
   var usersRef = firebase.database().ref('users');
