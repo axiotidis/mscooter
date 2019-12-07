@@ -51,7 +51,7 @@ function submitForm(e){
     },2000);
 
     //Clear form
-    document.getElementById('profileForm').reset();
+    document.getElementById('pointsForm').reset();
 
     setTimeout(function(){
         document.querySelector('.continue').style.display = 'block';
