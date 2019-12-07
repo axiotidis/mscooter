@@ -57,11 +57,13 @@ function gotData(data){
 	console.log("Current user nickname = " + userNickname);
 	console.log("Current user points = " + userPoints);
 	
-	var userKeys = [];
+	var usersArray = [];
 	// Get a database reference to the users section
     var ref = firebase.database().ref().child("users");
 	ref.on('value', function(snapshot) {
-    console.log(snapshotToArray(snapshot));
+    //console.log(snapshotToArray(snapshot));
+	usersArray = snapshotToArray(snapshot);
+	console.log(usersArray);
 });
 	
 
