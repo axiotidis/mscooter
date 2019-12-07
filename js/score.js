@@ -57,6 +57,7 @@ function gotData(data){
 	console.log("Current user nickname = " + userNickname);
 	console.log("Current user points = " + userPoints);
 	
+	var idUser = 0;
 	var usersArray = [];
 	// Get a database reference to the users section
     var ref = firebase.database().ref().child("users");
@@ -66,12 +67,21 @@ function gotData(data){
 	//console.log(usersArray);
 	var numberOfUsers = usersArray.length;
 	//console.log("There are " + numberOfUsers + "  registered users");
-	
+	var stringOfNicknames = "";
+	var stringOfPoints = "";
 	for (var i = 0; i < numberOfUsers; ++i){
-		var currentNickname = usersArray[i].nickname;
-		var currentPoints = usersArray[i].points;
-		console.log("User " + currentNickname + " have " + currentPoints + " points");
+		if (usersArray[i].nickname == userNickname){
+			stringOfNicknames =+ usersArray[i].nickname + " (You) " + ", ";
+			idUser = i;
+		}else {
+		stringOfNicknames =+ usersArray[i].nickname + ", ";
+		}
+		stringOfPoints =+ usersArray[i].points + ", ";
+		//console.log("User " + currentNickname + " have " + currentPoints + " points");
+		
 	}
+	console.log(stringOfNicknames);
+	console.log(stringOfPoints);
 });
 	
 
