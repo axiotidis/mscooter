@@ -73,7 +73,7 @@ function getInputVal(id){
 
 //Save the details to firebase
 function updateDetails(dbkey, points){
-    database.ref(dbkey).update({ 
+    database.ref("users/" + dbkey).update({ 
 	    points: points
 	    
 	});
