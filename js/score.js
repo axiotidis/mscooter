@@ -69,19 +69,21 @@ function gotData(data){
 	//console.log("There are " + numberOfUsers + "  registered users");
 	var stringOfNicknames = "";
 	var stringOfPoints = "";
+	
 	for (var i = 0; i < numberOfUsers; ++i){
 		if (usersArray[i].nickname == userNickname){
-			stringOfNicknames =+ usersArray[i].nickname + " (You) " + ", ";
+			stringOfNicknames = stringOfNicknames.concat(usersArray[i].nickname + " (You) " + ", ");
 			idUser = i;
 		}else {
-		stringOfNicknames =+ usersArray[i].nickname + ", ";
+		stringOfNicknames = stringOfNicknames.concat(usersArray[i].nickname + ", ");
 		}
-		stringOfPoints =+ usersArray[i].points + ", ";
+		stringOfPoints = stringOfPoints.concat(usersArray[i].points + ", ");
 		//console.log("User " + currentNickname + " have " + currentPoints + " points");
 		
 	}
 	console.log(stringOfNicknames);
 	console.log(stringOfPoints);
+	console.log("User ID = " + idUser);
 });
 	
 
