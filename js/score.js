@@ -69,7 +69,8 @@ function gotData(data){
 	
 	for (var i = 0; i < numberOfUsers; ++i){
 		var currentNickname = usersArray[i].nickname;
-		console.log("Nickname " + i + "  = " + currentNickname);
+		var currentPoints = usersArray[i].points;
+		console.log("User " + currentNickname + " have " + currentPoints + " points");
 	}
 });
 	
