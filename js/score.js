@@ -77,22 +77,8 @@ var myChart = new Chart(ctx, {
         datasets: [{
             label: 'This week\'s scoring board',
             data: [],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
+            backgroundColor: [],
+            borderColor: [],
             borderWidth: 1
         }]
     },
@@ -109,9 +95,21 @@ var myChart = new Chart(ctx, {
 for (var i = 0; i < numberOfUsers; ++i){
 		if (usersArray[i].nickname == userNickname){
 			myChart.data.labels.push(usersArray[i].nickname + " (You)");
+			myChart.data.datasets.forEach((dataset) => {
+				dataset.backgroundColor.push('rgba(255, 99, 132, 0.2)');
+		});
+			myChart.data.datasets.forEach((dataset) => {
+				dataset.borderColor.push('rgba(255, 99, 132, 0.2)');
+		});
 			idUser = i;
 		}else {
 		myChart.data.labels.push(usersArray[i].nickname);
+		myChart.data.datasets.forEach((dataset) => {
+			dataset.backgroundColor.push('rgba(54, 162, 235, 0.2)');
+		});
+		myChart.data.datasets.forEach((dataset) => {
+				dataset.borderColor.push('rgba(54, 162, 235, 0.2)');
+		});
 		}
 		myChart.data.datasets.forEach((dataset) => {
 			dataset.data.push(usersArray[i].points);
