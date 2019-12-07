@@ -82,7 +82,7 @@ var myChart = new Chart(ctx, {
         labels: [],
         datasets: [{
             label: 'This week\'s scoring board',
-            data: [userPoints, 100, 70, 50, 200, 30],
+            data: [],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -119,7 +119,7 @@ for (var i = 0; i < numberOfUsers; ++i){
 		}else {
 		myChart.data.labels.push(usersArray[i].nickname);
 		}
-		//myChart.data.datasets.data.push(usersArray[i].points);
+		myChart.data.datasets.data.push(usersArray[i].points);
 		//console.log("User " + currentNickname + " have " + currentPoints + " points");
 		
 	}
