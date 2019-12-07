@@ -60,12 +60,9 @@ function gotData(data){
 	var userKeys = [];
 	// Get a database reference to the users section
     var ref = firebase.database().ref().child("users");
-	ref.on("value", function() {
-		return function (snapshot) {
-            console.log(snapshot.val());
-			
-		}
-	}
+	ref.on('value', function(snapshot) {
+    console.log(snapshotToArray(snapshot));
+});
 	
 
 var ctx = document.getElementById('myChart').getContext('2d');
@@ -112,6 +109,18 @@ function errData(error){
 	console.log(error.message , error.code);
 }
 
+function snapshotToArray(snapshot) {
+    var returnArr = [];
+
+    snapshot.forEach(function(childSnapshot) {
+        var item = childSnapshot.val();
+        item.key = childSnapshot.key;
+
+        returnArr.push(item);
+    });
+
+    return returnArr;
+};
 
 
 
