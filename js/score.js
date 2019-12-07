@@ -63,14 +63,14 @@ function gotData(data){
 	ref.on('value', function(snapshot) {
     //console.log(snapshotToArray(snapshot));
 	usersArray = snapshotToArray(snapshot);
-	console.log(usersArray);
+	//console.log(usersArray);
 	var numberOfUsers = usersArray.length;
 	//console.log("There are " + numberOfUsers + "  registered users");
 	
-	/*for (var i = 0; i < numberOfUsers; ++i){
-		var currentNickname = usersArray.nickname[i];
+	for (var i = 0; i < numberOfUsers; ++i){
+		var currentNickname = usersArray[i].nickname;
 		console.log("Nickname " + i + "  = " + currentNickname);
-	}*/
+	}
 });
 	
 
