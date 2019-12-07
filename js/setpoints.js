@@ -23,7 +23,7 @@
   
 
 //Listen for form submit
-document.getElementById('profileForm').addEventListener('submit', submitForm);
+document.getElementById('pointsForm').addEventListener('submit', submitForm);
 
 //Submit form
 function submitForm(e){
