@@ -56,7 +56,19 @@ function gotData(data){
 	console.log("Current user email = " + userEmail);
 	console.log("Current user nickname = " + userNickname);
 	console.log("Current user points = " + userPoints);
-	var ctx = document.getElementById('myChart').getContext('2d');
+	
+	var userKeys = [];
+	// Get a database reference to the users section
+    var ref = firebase.database().ref().child("users");
+	ref.on("value", function() {
+		return function (snapshot) {
+            console.log(snapshot.val());
+			
+		}
+	}
+	
+
+var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
