@@ -31,7 +31,7 @@ function submitForm(e){
     var fname = getInputVal('fname');
     var nickname = getInputVal('nickname');
     var bday = getInputVal('bday');
-    var points = 0;
+    var points = 10;				//get 10 points as bonus points
     var today = new Date();
     var difference = (today.getFullYear() - bday.substring(0,4));
     if (difference > 17){
