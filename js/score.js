@@ -1,6 +1,6 @@
 var userEmail ="";
-var userNickname = "";
-var userPoints  = 0;
+var userNickname = "test"; //for test only
+var userPoints  = 95;		//for test only
 var dbKey ="";
 
 // Your web app's Firebase configuration
