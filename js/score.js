@@ -68,7 +68,7 @@ function gotData(data){
 	//console.log("There are " + numberOfUsers + "  registered users");
 	
 	for (var i = 0; i < numberOfUsers; ++i){
-		var currentNickname = usersArray[i];
+		var currentNickname = usersArray.nickname[i];
 		console.log("Nickname " + i + "  = " + currentNickname);
 	}
 });
