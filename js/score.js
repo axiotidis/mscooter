@@ -1,5 +1,6 @@
 var userEmail ="";
 var userNickname = "";
+var userPoints  = 0;
 var dbKey ="";
 
 // Your web app's Firebase configuration
@@ -50,17 +51,9 @@ function readUserData(email){
 function gotData(data){
 	data = data.val();
 	userEmail = data.email;
-	userPhone = data.phone;
-	userPayment = data.payment;
-	userFname = data.fname;
-	userLname = data.lname;
-	userBday = data.bday;
-	document.getElementById("email").value = userEmail;
-	document.getElementById("phone").value = userPhone;
-	document.getElementById("payment").value = userPayment;
-	document.getElementById("fname").value = userFname;
-	document.getElementById("lname").value = userLname;
-	document.getElementById("bday").value = userBday;
+	userNickname = data.nickname;
+	userPoints = data.points;
+	
 }
 
 function errData(error){
@@ -68,87 +61,16 @@ function errData(error){
 }
 
 
-  //Reference messages collection
-  var usersRef = firebase.database().ref('users');
-  
-  
 
-//Listen for form submit
-document.getElementById('profileForm').addEventListener('submit', submitForm);
-
-//Submit form
-function submitForm(e){
-    e.preventDefault();
-  
-    //Get values
-    var email = getInputVal('email');
-    var phone = getInputVal('phone');
-    var payment = getInputVal('payment');
-    var fname = getInputVal('fname');
-    var lname = getInputVal('lname');
-    var bday = getInputVal('bday');
-	
-	var today = new Date();
-    var difference = (today.getFullYear() - bday.substring(0,4));
-    if (difference > 17){
-	
-
-    
-    // update user details
-    updateDetails(email, phone, payment, fname, lname, bday);
-
-    //Show alert
-    document.querySelector('.alert').style.display = 'block';
-
-    //Hide alert after 3 sec
-    setTimeout(function(){
-        document.querySelector('.alert').style.display = 'none';
-    },2000);
-
-    //Clear form
-    document.getElementById('profileForm').reset();
-
-    setTimeout(function(){
-        document.querySelector('.continue').style.display = 'block';
-    },2000);
-
-    setTimeout(function(){
-        document.querySelector('.continue').style.display = 'none';
-        window.location.replace("app.html");
-    },4000);
-	}else {
-	alert("You must be adult to rent a scooter");
-}
-}
-
-
-
-//Function to get form values
-function getInputVal(id){
-    return document.getElementById(id).value;
-}
-
-//Save the details to firebase
-function updateDetails(email, phone, payment, fname, lname, bday){
-    database.ref("users/" + dbKey).update({ 
-	    email: email,
-	    phone: phone,
-	    payment: payment,
-	    fname : fname,
-	    lname : lname,
-	    bday : bday
-	});
-
-}
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Τάσος', 'Χρίστος', 'Αλεξάνδρα', 'Μιχάλης', 'Περικλής', 'Γιώργος'],
+        labels: [userNickname, 'Χρίστος', 'Αλεξάνδρα', 'Μιχάλης', 'Περικλής', 'Γιώργος'],
         datasets: [{
             label: 'This week\'s scoring board',
-            data: [6, 4, 7, 5, 2, 3],
+            data: [userPoints, 100, 70, 50, 200, 30],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
