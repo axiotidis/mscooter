@@ -1,9 +1,5 @@
 var userEmail ="";
-var userPhone =0;
-var userPayment = "";
-var userFname = "";
-var userLname = "";
-var userBday = ""; 
+var userNickname = "";
 var dbKey ="";
 
 // Your web app's Firebase configuration
