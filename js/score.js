@@ -95,25 +95,32 @@ var myChart = new Chart(ctx, {
 for (var i = 0; i < numberOfUsers; ++i){
 		if (usersArray[i].nickname == userNickname){
 			myChart.data.labels.push(usersArray[i].nickname + " (You)");
+			myChart.update();
 			myChart.data.datasets.forEach((dataset) => {
 				dataset.backgroundColor.push('rgba(255, 99, 132, 0.2)');
-		});
+			});
+			myChart.update();
 			myChart.data.datasets.forEach((dataset) => {
 				dataset.borderColor.push('rgba(255, 99, 132, 0.2)');
-		});
+			});
+			myChart.update();
 			idUser = i;
 		}else {
-		myChart.data.labels.push(usersArray[i].nickname);
-		myChart.data.datasets.forEach((dataset) => {
-			dataset.backgroundColor.push('rgba(54, 162, 235, 0.2)');
-		});
-		myChart.data.datasets.forEach((dataset) => {
+			myChart.data.labels.push(usersArray[i].nickname);
+			myChart.update();
+			myChart.data.datasets.forEach((dataset) => {
+				dataset.backgroundColor.push('rgba(54, 162, 235, 0.2)');
+			});
+			myChart.update();
+			myChart.data.datasets.forEach((dataset) => {
 				dataset.borderColor.push('rgba(54, 162, 235, 0.2)');
 		});
+			myChart.update();
 		}
 		myChart.data.datasets.forEach((dataset) => {
 			dataset.data.push(usersArray[i].points);
 		});
+		myChart.update();
 		//console.log("User " + currentNickname + " have " + currentPoints + " points");
 		
 	}
