@@ -65,7 +65,12 @@ function gotData(data){
 	usersArray = snapshotToArray(snapshot);
 	//console.log(usersArray);
 	var numberOfUsers = usersArray.length;
-	console.log("There are " + numberOfUsers + "  registered users");
+	//console.log("There are " + numberOfUsers + "  registered users");
+	
+	for (var i = 0; i < numberOfUsers; ++i){
+		var currentNickname = usersArray[i];
+		console.log("Nickname " + i + "  = " + currentNickname);
+	}
 });
 	
 
