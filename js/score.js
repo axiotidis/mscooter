@@ -67,13 +67,7 @@ function gotData(data){
 	//console.log(usersArray);
 	var numberOfUsers = usersArray.length;
 	//console.log("There are " + numberOfUsers + "  registered users");
-	var stringOfNicknames = "";
-	var stringOfPoints = "";
-	
-	
-	
-
-	
+		
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
@@ -119,7 +113,9 @@ for (var i = 0; i < numberOfUsers; ++i){
 		}else {
 		myChart.data.labels.push(usersArray[i].nickname);
 		}
-		myChart.data.datasets.data.push(usersArray[i].points);
+		myChart.data.datasets.forEach((dataset) => {
+			dataset.data.push(usersArray[i].points);
+		});
 		//console.log("User " + currentNickname + " have " + currentPoints + " points");
 		
 	}
