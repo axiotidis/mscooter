@@ -3,6 +3,7 @@ var userPhone =0;
 var userPayment = "";
 var userFname = "";
 var userLname = "";
+var userNickname = "";
 var userBday = ""; 
 var dbKey ="";
 
@@ -58,12 +59,14 @@ function gotData(data){
 	userPayment = data.payment;
 	userFname = data.fname;
 	userLname = data.lname;
+	userNickname = data.nickname;
 	userBday = data.bday;
 	document.getElementById("email").value = userEmail;
 	document.getElementById("phone").value = userPhone;
 	document.getElementById("payment").value = userPayment;
 	document.getElementById("fname").value = userFname;
 	document.getElementById("lname").value = userLname;
+	document.getElementById("nickname").value = userNickname;
 	document.getElementById("bday").value = userBday;
 }
 
@@ -90,6 +93,7 @@ function submitForm(e){
     var payment = getInputVal('payment');
     var fname = getInputVal('fname');
     var lname = getInputVal('lname');
+    var nickname = getInputVal('nickname');
     var bday = getInputVal('bday');
 	
 	var today = new Date();
@@ -99,7 +103,7 @@ function submitForm(e){
 
     
     // update user details
-    updateDetails(email, phone, payment, fname, lname, bday);
+    updateDetails(email, phone, payment, fname, lname, nickname, bday);
 
     //Show alert
     document.querySelector('.alert').style.display = 'block';
@@ -133,13 +137,14 @@ function getInputVal(id){
 }
 
 //Save the details to firebase
-function updateDetails(email, phone, payment, fname, lname, bday){
+function updateDetails(email, phone, payment, fname, lname, nickname, bday){
     database.ref("users/" + dbKey).update({ 
 	    email: email,
 	    phone: phone,
 	    payment: payment,
 	    fname : fname,
 	    lname : lname,
+	    nickname : nickname,
 	    bday : bday
 	});
 
