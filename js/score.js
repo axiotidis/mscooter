@@ -56,16 +56,7 @@ function gotData(data){
 	console.log("Current user email = " + userEmail);
 	console.log("Current user nickname = " + userNickname);
 	console.log("Current user points = " + userPoints);
-}
-
-function errData(error){
-	console.log(error.message , error.code);
-}
-
-
-
-
-var ctx = document.getElementById('myChart').getContext('2d');
+	var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -102,3 +93,13 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+
+}
+
+function errData(error){
+	console.log(error.message , error.code);
+}
+
+
+
+
