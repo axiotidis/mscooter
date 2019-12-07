@@ -53,7 +53,9 @@ function gotData(data){
 	userEmail = data.email;
 	userNickname = data.nickname;
 	userPoints = data.points;
-	
+	console.log("Current user email = " + userEmail);
+	console.log("Current user nickname = " + userNickname);
+	console.log("Current user points = " + userPoints);
 }
 
 function errData(error){
