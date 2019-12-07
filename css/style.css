@@ -193,6 +193,15 @@
      resize: none;
 }
 
+.singin form canvas{
+     background-color: rgb(255, 255, 255);
+     width:100%;
+     padding:1em;
+     box-sizing: border-box;
+     border:1px solid #c9e6ff;
+     resize: none;
+}
+
   .singin form button{
     background:#c9e6ff;
     border:0;
