@@ -88,11 +88,14 @@ var myChart = new Chart(ctx, {
                     beginAtZero: true
                 }
             }]
-        }
+        },
+		legend: {
+					position: 'top',
+				},
 		title: {
-			 display: true,
-			 text: 'This week\'s scoring board'
-			}
+					display: true,
+					text: 'This week\'s scoring board'
+				}
     }
 });
 		
