@@ -128,6 +128,36 @@ for (var i = 0; i < numberOfUsers; ++i){
 });
 }
 
+//Listen for form submit
+document.getElementById('scoreForm').addEventListener('submit', submitForm);
+
+//Submit form
+function submitForm(e){
+    e.preventDefault();
+  
+    
+    //Show alert
+    document.querySelector('.alert').style.display = 'block';
+
+    //Hide alert after 3 sec
+    setTimeout(function(){
+        document.querySelector('.alert').style.display = 'none';
+    },2000);
+
+    
+
+    setTimeout(function(){
+        document.querySelector('.continue').style.display = 'block';
+    },2000);
+
+    setTimeout(function(){
+        document.querySelector('.continue').style.display = 'none';
+        window.location.replace("app.html");
+    },4000);
+	
+}
+
+
 function errData(error){
 	console.log(error.message , error.code);
 }
