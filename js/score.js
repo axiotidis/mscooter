@@ -70,7 +70,6 @@ function gotData(data){
 		
 
 var ctx = document.getElementById('myChart').getContext('2d');
-ctx.height = 500;
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
