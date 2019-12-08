@@ -75,6 +75,7 @@ var myChart = new Chart(ctx, {
     data: {
         labels: [],
         datasets: [{
+            label: 'This week\'s scoring board',
             data: [],
             backgroundColor: [],
             borderColor: [],
@@ -88,14 +89,7 @@ var myChart = new Chart(ctx, {
                     beginAtZero: true
                 }
             }]
-        },
-		legend: {
-					position: 'top',
-				},
-		title: {
-					display: true,
-					text: 'This week\'s scoring board'
-				}
+        }
     }
 });
 		
