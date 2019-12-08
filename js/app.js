@@ -168,23 +168,7 @@ function gotSdata(sdata){
 	if (sBooked == "No"){
 		var marker = new L.marker([sLat, sLng], {icon: greenScooter}).addTo(map);	//set a marker in current geoposition
 		available = "Yes";
-		var bookBtn = '<div>\
-<style>\
-.button {\
-  background-color: #4CAF50;\
-  border: none;\
-  color: white;\
-  padding: 15px 32px;\
-  text-align: center;\
-  text-decoration: none;\
-  display: inline-block;\
-  font-size: 16px;\
-  margin: 4px 2px;\
-  cursor: pointer;\
-}\
-</style>\
-<button class="button" type="button" onclick="bookFunction()">BOOK this e-scooter</button>\
-</div>';
+		
 	
   	var mypopup = "<b>";		//prepare a custom popup 
 	mypopup += "SN: kom" + sId;
@@ -199,11 +183,6 @@ function gotSdata(sdata){
 	mypopup += "</b><br><b>";
 	mypopup += "0.15 EURO/min";
 	mypopup += "</b><br>";
-	mypopup += "If it is ok press the ";
-	mypopup += "<b>";
-	mypopup += "BOOK button";
-	mypopup += "</b><br><br>";
-	mypopup += bookBtn;
 	marker.bindPopup(mypopup);
 		
 	} else {
