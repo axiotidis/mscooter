@@ -170,6 +170,18 @@ body
 {
   transform: none;
 }
+#grbutton {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 </style>
 
   </head>
@@ -213,7 +225,9 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
   </div>
 </nav>
   
-  <div id="map"></div>
+  <div id="map">
+    <button id="grbutton" type="button" onclick="scanToRide()">Scan QR code to Ride</button>
+  </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/leaflet.js"></script>
@@ -227,7 +241,7 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
     
     
   <script>
-    function popMessage(){
+    function scanToRide(){
       alert("Your book is confirmed");
     }
   </script>
