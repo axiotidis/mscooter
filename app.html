@@ -170,6 +170,34 @@ body
 {
   transform: none;
 }
+
+      #map-wrapper {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    border: 1px solid black;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+}
+
+#button-wrapper {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    border: 1px solid red;
+}
+
+
+.btnStyle {
+    border-radius: 15px;
+background-color: #4D90FE; 
+background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED); 
+border: 1px solid #3079ED; 
+color: #FFFFFF;
 </style>
 
   </head>
@@ -181,9 +209,7 @@ body
 https://firebase.google.com/docs/web/setup#config-web-app -->
   <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-  <div>
-    <input type="button" id="scan" value="Scan to ride"/>
-  </div>
+  
     
     <nav role="navigation">
   <div id="menuToggle">
@@ -215,7 +241,18 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
   </div>
 </nav>
   
-  <div id="map"></div>
+  <div class="span9" style="height:100%">
+    <div id="map-wrapper">
+        <div id="map"></div>
+        <div id="button-wrapper">
+            
+            <input type="button" id="scan" value="Scan QR code" onclick="scanToRide()" class="btnStyle span3"/> 
+            
+           
+        </div> 
+    </div>
+       
+    </div>
   
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
