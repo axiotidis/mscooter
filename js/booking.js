@@ -121,7 +121,7 @@ function setPosition(position) {
   var marker = new L.marker([lat, lng], {icon: redIcon}).addTo(map);	//set a marker in current geoposition
   var mypopup = "You are here";
   map.setView([lat, lng], zoom);			//Zoom map in the current geoposition
-  marker.bindPopup(mypopup).openPopup();
+  marker.bindPopup(mypopup);
 }
 
 var i;
@@ -183,7 +183,7 @@ function gotSdata(sdata){
 	mypopup += "</b><br><b>";
 	mypopup += "0.15 EURO/min";
 	mypopup += "</b><br>";
-	marker.bindPopup(mypopup);
+	marker.bindPopup(mypopup).openPopup();
 		
 	} else {
 		var marker = new L.marker([sLat, sLng], {icon: redScooter}).addTo(map);	//set a marker in current geoposition
