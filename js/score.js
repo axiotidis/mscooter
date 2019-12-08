@@ -75,7 +75,6 @@ var myChart = new Chart(ctx, {
     data: {
         labels: [],
         datasets: [{
-            label: 'This week\'s scoring board',
             data: [],
             backgroundColor: [],
             borderColor: [],
@@ -83,22 +82,18 @@ var myChart = new Chart(ctx, {
         }]
     },
     options: {
-				// Elements options apply to all of the options unless overridden in a dataset
-				// In this case, we are setting the border of each horizontal bar to be 2px wide
-				elements: {
-					rectangle: {
-						borderWidth: 2,
-						}
-					},
-					responsive: true,
-					legend: {
-						position: 'right',
-					},
-					title: {
-						display: true,
-						text: 'This week\'s scoring board'
-					}
-				}
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+		title: {
+			 display: true,
+			 text: 'This week\'s scoring board'
+			}
+    }
 });
 		
 for (var i = 0; i < numberOfUsers; ++i){
