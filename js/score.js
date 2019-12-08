@@ -97,11 +97,11 @@ for (var i = 0; i < numberOfUsers; ++i){
 			myChart.data.labels.push(usersArray[i].nickname + " (You)");
 			myChart.update();
 			myChart.data.datasets.forEach((dataset) => {
-				dataset.backgroundColor.push('rgba(255, 99, 132, 0.2)');
+				dataset.backgroundColor.push('rgba(255, 102, 0, 0.2)');
 			});
 			myChart.update();
 			myChart.data.datasets.forEach((dataset) => {
-				dataset.borderColor.push('rgba(255, 99, 132, 0.2)');
+				dataset.borderColor.push('rgba(255, 102, 0, 0.2)');
 			});
 			myChart.update();
 			idUser = i;
@@ -109,11 +109,11 @@ for (var i = 0; i < numberOfUsers; ++i){
 			myChart.data.labels.push(usersArray[i].nickname);
 			myChart.update();
 			myChart.data.datasets.forEach((dataset) => {
-				dataset.backgroundColor.push('rgba(54, 162, 235, 0.2)');
+				dataset.backgroundColor.push('rgba(153, 255, 204, 0.2)');
 			});
 			myChart.update();
 			myChart.data.datasets.forEach((dataset) => {
-				dataset.borderColor.push('rgba(54, 162, 235, 0.2)');
+				dataset.borderColor.push('rgba(153, 255, 204, 0.2)');
 		});
 			myChart.update();
 		}
