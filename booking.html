@@ -184,6 +184,22 @@ body
   margin: 4px 2px;
   cursor: pointer;
 }
+      
+.rdbutton {
+  background-color: #FF0000;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  bottom: 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}      
+      
 .button-wrapper {
     position: absolute;
     bottom: 20px;
@@ -237,6 +253,7 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
   
   <div id="map"></div>
   <div class="button-wrapper">
+  <button class ="rdbutton" id="rdbutton" type="button" onclick="cancelRide()";>Cancel</button>
   <button class ="grbutton" id="grbutton" type="button" onclick="startRide()";>Unlock</button>
   </div>  
   
@@ -254,6 +271,10 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
     <script>
     function startRide(){
       window.location.replace("startride.html");
+    }
+      
+      function cancelRide(){
+      window.location.replace("app.html");
     }
   </script>
     
