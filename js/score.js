@@ -97,7 +97,7 @@ for (var i = 0; i < numberOfUsers; ++i){
 			myChart.data.labels.push(usersArray[i].nickname + " (You)");
 			myChart.update();
 			myChart.data.datasets.forEach((dataset) => {
-				dataset.backgroundColor.push('rgba(255, 102, 0, 0.2)');
+				dataset.backgroundColor.push('rgba(255, 102, 0, 1)');
 			});
 			myChart.update();
 			myChart.data.datasets.forEach((dataset) => {
@@ -109,7 +109,7 @@ for (var i = 0; i < numberOfUsers; ++i){
 			myChart.data.labels.push(usersArray[i].nickname);
 			myChart.update();
 			myChart.data.datasets.forEach((dataset) => {
-				dataset.backgroundColor.push('rgba(153, 255, 204, 0.2)');
+				dataset.backgroundColor.push('rgba(153, 255, 204, 1)');
 			});
 			myChart.update();
 			myChart.data.datasets.forEach((dataset) => {
