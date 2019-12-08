@@ -83,15 +83,24 @@ var myChart = new Chart(ctx, {
         }]
     },
     options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
+				// Elements options apply to all of the options unless overridden in a dataset
+				// In this case, we are setting the border of each horizontal bar to be 2px wide
+				elements: {
+					rectangle: {
+						borderWidth: 2,
+						}
+					},
+					responsive: true,
+					legend: {
+						position: 'right',
+					},
+					title: {
+						display: true,
+						text: 'This week\'s scoring board'
+					}
+				}
 });
+		
 for (var i = 0; i < numberOfUsers; ++i){
 		if (usersArray[i].nickname == userNickname){
 			myChart.data.labels.push(usersArray[i].nickname + " (You)");
