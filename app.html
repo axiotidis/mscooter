@@ -184,7 +184,12 @@ body
   margin: 4px 2px;
   cursor: pointer;
 }
-
+.button-wrapper {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    border: none;
+}
 
 </style>
 
@@ -229,7 +234,9 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
   </div>
 </nav>
   <span>
+  <div class="button-wrapper">
   <button class ="grbutton" id="grbutton" type="button" onclick="scanToRide()">Scan QR code to Ride</button>
+  </div>
   <div id="map"></div>
   </span>
   
