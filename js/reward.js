@@ -49,7 +49,7 @@ function gotData(data){
 		doUpdate = true;
 		userPoints = data.points;
 		userPoints = +userPoints + +rewardPoints;
-		alert("userPoints = " + userPoints);
+		//alert("userPoints = " + userPoints);
 		updateDetails(userPoints);
 	}
 }
