@@ -1,4 +1,4 @@
-var userPoints;
+var userPoints = 0;
 var rewardPoints = 10;
 
 // Your web app's Firebase configuration
@@ -46,6 +46,7 @@ function gotData(data){
 	data = data.val();
 	userPoints = data.points;
 	userPoints = userPoints + rewardPoints;
+	alert("userPoints = " + userPoints);
 	updateDetails(userPoints);
 }
 
