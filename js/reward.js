@@ -1,5 +1,6 @@
 var userPoints = 0;
 var rewardPoints = 10;
+var doUpdate;
 
 // Your web app's Firebase configuration
   var firebaseConfig = {
@@ -44,10 +45,13 @@ function readUserData(email){
 
 function gotData(data){
 	data = data.val();
-	userPoints = data.points;
-	userPoints = +userPoints + +rewardPoints;
-	alert("userPoints = " + userPoints);
-	updateDetails(userPoints);
+	if(!doUpdate){
+		doUpdate = true;
+		userPoints = data.points;
+		userPoints = +userPoints + +rewardPoints;
+		alert("userPoints = " + userPoints);
+		updateDetails(userPoints);
+	}
 }
 
 function errData(error){
