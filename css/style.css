@@ -10,6 +10,20 @@
     padding:1em;
   }
   
+.cancelButton{
+    width:100%;
+    padding:1em;
+    border:1px solid #ffddc9;
+    background:#ffddc9;
+    color:#000000
+    border:0;
+    font-size: 18px;
+  }
+ .cancelButton:hover,.cancelButton:focus{
+    background:#e7b192;
+    color:#ffffff;
+    outline:0;
+  }
   .container{
     max-width:1170px;
     margin-left:auto;
