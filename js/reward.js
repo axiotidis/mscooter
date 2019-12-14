@@ -45,7 +45,7 @@ function readUserData(email){
 function gotData(data){
 	data = data.val();
 	userPoints = data.points;
-	userPoints = userPoints + rewardPoints;
+	userPoints = +userPoints + +rewardPoints;
 	alert("userPoints = " + userPoints);
 	updateDetails(userPoints);
 }
