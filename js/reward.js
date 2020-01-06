@@ -50,7 +50,8 @@ function gotData(data){
 		userPoints = data.points;
 		userPoints = +userPoints + +rewardPoints;
 		//alert("userPoints = " + userPoints);
-		updateDetails(userPoints);
+        updateDetails(userPoints);
+        updateScooter("No");
 	}
 }
 
@@ -74,5 +75,12 @@ function updateDetails(points){
 	    points : points
 	});
 
+}
+
+//change the values of patini with sn 6 in firebase
+function updateScooter(Booked){
+    database.ref("scooters/5/").update({ 
+        Booked : Booked
+	});
 }
 
