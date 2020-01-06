@@ -122,8 +122,22 @@ function setPosition(position) {
   var mypopup = "You are here";
   map.setView([lat, lng], zoom);			//Zoom map in the current geoposition
   marker.bindPopup(mypopup);
+
+  //change the values of patini with sn 6 in firebase
+  updateScooter(lat, lng, "Yes")
+
+  
+
 }
 
+//change the values of patini with sn 6 in firebase
+function updateScooter(Lat, Log, Booked){
+    database.ref("scooters/5/").update({ 
+        Lat : Lat,
+        Log : Log,
+        Booked : Booked
+	});
+}
 var i;
 for (i = 0; i < 11; i++) {
   	let ref = database.ref("poi/" +i); 
