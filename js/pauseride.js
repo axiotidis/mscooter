@@ -2,6 +2,9 @@ var rewardPoints;
 var poiPoints;
 var doUpdate;
 var dbKey;
+var lat;
+var lng;
+
 var basemap = new L.TileLayer(baseUrl, {maxZoom: 19, attribution: baseAttribution, subdomains: subdomains, opacity: opacity});
 
 var klat = 41.11954131584224;		//set initial value latitude
@@ -157,9 +160,8 @@ function gotData(data){
 	marker.bindPopup(mypopup);
 
 
-	lat1 = position.coords.latitude.toString();		//find current latitude
-	lng1 = position.coords.longitude.toString();		//find current lognitude
-	tempDistance = getDistance([lat1, lng1], [poiLat, poiLng]).toFixed(2);		//find the distance between current possition and POIs
+	
+	tempDistance = getDistance([lat, lng], [poiLat, poiLng]).toFixed(2);		//find the distance between current possition and POIs
 	distance = Math.abs(tempDistance);
 	console.log("The disttance from "+poiTxt+" is "+distance+" meters");
 	if (distance < 30){															//if the distance is less than 30 m from POI
