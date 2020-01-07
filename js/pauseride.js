@@ -166,11 +166,12 @@ function gotData(data){
 	distance = Math.abs(tempDistance);
 	
 	if (distance < 1.08){														//TEST TEST TEST TEST TEST TEST 
-		console.log("The disttance from "+poiTxt+" is "+distance+" meters");	//TEST TEST TEST TEST TEST TEST
+		//console.log("The disttance from "+poiTxt+" is "+distance+" meters");	//TEST TEST TEST TEST TEST TEST
 	//if (distance < 0.03){															//if the distance is less than 30 m from POI
 		user = firebase.auth().currentUser;
 		email = user.email;
 		rwPoints = poiPoints;
+		alert("Congratulations! You are in a cultural point of interest named " + poiTxt + " your reward is " + rwPoints + " points");
 		readUserData(email);
 	}
 
@@ -200,11 +201,11 @@ function gotUserData(data){
 		dbKey = snapshot.key;
 		doUpdate = true;
 		userPoints = data.points;
-		console.log("userPoints before = " + userPoints);
+		//console.log("userPoints before = " + userPoints);
 		userPoints = +userPoints + +rwPoints;
-		console.log("You earned  " + rwPoints + " points for this place");
-		console.log("userPoints now = " + userPoints);
-		console.log("dbKey = " + dbKey);
+		//console.log("You earned  " + rwPoints + " points for this place");
+		//console.log("userPoints now = " + userPoints);
+		//console.log("dbKey = " + dbKey);
 		updateDetails(userPoints, dbKey);	 
 	});
 		
