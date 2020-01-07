@@ -163,8 +163,9 @@ function gotData(data){
 	
 	tempDistance = getDistance([lat, lng], [poiLat, poiLng]).toFixed(2);		//find the distance between current possition and POIs
 	distance = Math.abs(tempDistance);
-	console.log("The disttance from "+poiTxt+" is "+distance+" meters");
-	if (distance < 0.03){															//if the distance is less than 30 m from POI
+	console.log("The disttance from "+poiTxt+" is "+distance+" km");
+	if (distance < 1.08){								//TEST TEST TEST TEST TEST
+	//if (distance < 0.03){															//if the distance is less than 30 m from POI
 		user = firebase.auth().currentUser;
 		email = user.email;
 		readUserData(email);
