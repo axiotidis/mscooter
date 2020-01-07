@@ -198,6 +198,7 @@ function gotUserData(data){
 		userPoints = +userPoints + +poiPoints;
 		console.log("You earned  " + poiPoints + " points for this place");
 		console.log("userPoints now = " + userPoints);
+		console.log("dbKey = " + dbKey);
 		updateDetails(userPoints);
 	}
 
