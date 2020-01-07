@@ -4,6 +4,7 @@ var doUpdate;
 var dbKey;
 var lat;
 var lng;
+var rwPoints;
 
 var basemap = new L.TileLayer(baseUrl, {maxZoom: 19, attribution: baseAttribution, subdomains: subdomains, opacity: opacity});
 
@@ -169,6 +170,7 @@ function gotData(data){
 	//if (distance < 0.03){															//if the distance is less than 30 m from POI
 		user = firebase.auth().currentUser;
 		email = user.email;
+		rwPoints = poiPoints;
 		readUserData(email);
 	}
 
@@ -199,8 +201,8 @@ function gotUserData(data){
 		doUpdate = true;
 		userPoints = data.points;
 		console.log("userPoints before = " + userPoints);
-		userPoints = +userPoints + +poiPoints;
-		console.log("You earned  " + poiPoints + " points for this place");
+		userPoints = +userPoints + +rwPoints;
+		console.log("You earned  " + rwPoints + " points for this place");
 		console.log("userPoints now = " + userPoints);
 		console.log("dbKey = " + dbKey);
 		updateDetails(userPoints, dbKey);	 
