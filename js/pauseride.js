@@ -1,4 +1,7 @@
-
+var rewardPoints;
+var poiPoints;
+var doUpdate;
+var dbKey;
 var basemap = new L.TileLayer(baseUrl, {maxZoom: 19, attribution: baseAttribution, subdomains: subdomains, opacity: opacity});
 
 var klat = 41.11954131584224;		//set initial value latitude
@@ -122,6 +125,8 @@ function setPosition(position) {
   var mypopup = "You are here";
   map.setView([lat, lng], zoom);			//Zoom map in the current geoposition
   marker.bindPopup(mypopup);
+
+  
 }
 
 var i;
@@ -142,6 +147,7 @@ function gotData(data){
 	poiLng = data.Log;
 	poiPic = data.Pic;
 	poiTxt = data.name;
+	poiPoints = data.points;
 	
 	var marker = new L.marker([poiLat, poiLng], {icon: poiIcon}).addTo(map);	//set a marker in current geoposition
   	var mypopup = "<img src=" + poiPic + ">";		//prepare a custom popup 
@@ -150,11 +156,60 @@ function gotData(data){
 	mypopup += "</b>";
 	marker.bindPopup(mypopup);
 
+
+	lat1 = position.coords.latitude.toString();		//find current latitude
+	lng1 = position.coords.longitude.toString();		//find current lognitude
+	tempDistance = getDistance([lat1, lng1], [poiLat, poiLng]).toFixed(2);		//find the distance between current possition and POIs
+	distance = Math.abs(tempDistance);
+	console.log("The disttance from "+poiTxt+" is "+distance+" meters");
+	if (distance < 30){															//if the distance is less than 30 m from POI
+		user = firebase.auth().currentUser;
+		email = user.email;
+		readUserData(email);
+	}
+
+
+
+}
+
+function readUserData(email){
+	var ref = firebase.database().ref("users");
+	ref.orderByChild("email").equalTo(email).on("child_added", function(snapshot) {
+		//console.log(snapshot.key);
+	dbKey = snapshot.key;	
+	let ref = database.ref("users/" + dbKey); 
+	ref.on("value" , gotUserData , errData);
+	});
+	
+}
+
+function gotUserData(data){
+	data = data.val();
+	userEmail = data.email;
+	userPoints = data.points;
+	if(!doUpdate){
+		doUpdate = true;
+		userPoints = data.points;
+		userPoints = +userPoints + +poiPoints;
+		alert("You earned  " + poiPoints + " points for this place");
+		alert("userPoints = " + userPoints);
+		updateDetails(userPoints);
+	}
+
 }
 
 function errData(error){
 	console.log(error.message , error.code);
 }
+
+//Save the details to firebase
+function updateDetails(points, dbKey){
+    database.ref("users/" + dbKey).update({ 
+	    points : points
+	});
+
+}
+
 var available = "";
 function gotSdata(sdata){
 	sdata = sdata.val();
@@ -198,6 +253,26 @@ function gotSdata(sdata){
 	}
 
 
+}
+
+function getDistance(origin, destination) {
+    // return distance in m
+    var lon1 = toRadian(origin[1]);
+    var lat1 = toRadian(origin[0]);
+    var lon2 = toRadian(destination[1]);
+    var lat2 = toRadian(destination[0]);
+
+    var deltaLat = lat2 - lat1;
+    var deltaLon = lon2 - lon1;
+
+    var a = Math.pow(Math.sin(deltaLat/2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(deltaLon/2), 2);
+    var c = 2 * Math.asin(Math.sqrt(a));
+    var EARTH_RADIUS = 6.371;
+    return c * EARTH_RADIUS;
+}
+
+function toRadian(degree) {
+    return degree*Math.PI/180;
 }
 
 function bookFunction(){
