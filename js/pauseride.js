@@ -194,9 +194,10 @@ function gotUserData(data){
 	if(!doUpdate){
 		doUpdate = true;
 		userPoints = data.points;
+		console.log("userPoints before = " + userPoints);
 		userPoints = +userPoints + +poiPoints;
-		alert("You earned  " + poiPoints + " points for this place");
-		alert("userPoints = " + userPoints);
+		console.log("You earned  " + poiPoints + " points for this place");
+		console.log("userPoints now = " + userPoints);
 		updateDetails(userPoints);
 	}
 
