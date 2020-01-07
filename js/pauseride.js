@@ -164,7 +164,7 @@ function gotData(data){
 	tempDistance = getDistance([lat, lng], [poiLat, poiLng]).toFixed(2);		//find the distance between current possition and POIs
 	distance = Math.abs(tempDistance);
 	console.log("The disttance from "+poiTxt+" is "+distance+" meters");
-	if (distance < 30){															//if the distance is less than 30 m from POI
+	if (distance < 0.03){															//if the distance is less than 30 m from POI
 		user = firebase.auth().currentUser;
 		email = user.email;
 		readUserData(email);
@@ -258,7 +258,7 @@ function gotSdata(sdata){
 }
 
 function getDistance(origin, destination) {
-    // return distance in m
+    // return distance in km
     var lon1 = toRadian(origin[1]);
     var lat1 = toRadian(origin[0]);
     var lon2 = toRadian(destination[1]);
@@ -269,7 +269,7 @@ function getDistance(origin, destination) {
 
     var a = Math.pow(Math.sin(deltaLat/2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(deltaLon/2), 2);
     var c = 2 * Math.asin(Math.sqrt(a));
-    var EARTH_RADIUS = 6.371;
+    var EARTH_RADIUS = 6371;
     return c * EARTH_RADIUS;
 }
 
