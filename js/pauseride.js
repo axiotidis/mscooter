@@ -192,6 +192,11 @@ function gotUserData(data){
 	userEmail = data.email;
 	userPoints = data.points;
 	if(!doUpdate){
+		var ref = firebase.database().ref("users");
+		ref.orderByChild("email").equalTo(userEmail).on("child_added", function(snapshot) {
+		//console.log(snapshot.key);
+		dbKey = snapshot.key;	 
+	});
 		doUpdate = true;
 		userPoints = data.points;
 		console.log("userPoints before = " + userPoints);
