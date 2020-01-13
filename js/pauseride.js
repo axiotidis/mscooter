@@ -167,7 +167,7 @@ function gotData(data){
 	
 	//if (distance < 1.08){														 
 		//console.log("The disttance from "+poiTxt+" is "+distance+" meters");	
-	if (distance < 0.03){															//if the distance is less than 30 m from POI get reward
+	if (distance < 0.05){			//If user is 50m near the POI get the points												//if the distance is less than 30 m from POI get reward
 		user = firebase.auth().currentUser;
 		email = user.email;
 		rwPoints = poiPoints;
