@@ -148,7 +148,7 @@ function gotData(data){
   	var mypopup = "<img src=" + poiPic + ">";		//prepare a custom popup 
 	mypopup += "<br><br><b>";
 	mypopup += poiTxt;
-	mypopup += "</b>";
+	mypopup += "<br>";
 	mypopup += poiInf;
 	mypopup += "</b>";
 	marker.bindPopup(mypopup);
